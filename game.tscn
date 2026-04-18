@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d3y1cb6tqyug5" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://gn1jj46s62dm" path="res://player_space.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dwp3igcc7lv7r" path="res://canvas.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://rtb0cvf0pxp1" path="res://audio.tscn" id="4_fc0e3"]
 
 [node name="Game" type="Control" unique_id=1684369373]
 layout_mode = 3
@@ -29,3 +30,5 @@ offset_left = 281.0
 offset_top = 75.0
 offset_right = -665.0
 offset_bottom = -374.0
+
+[node name="Audio" parent="." unique_id=245871639 instance=ExtResource("4_fc0e3")]

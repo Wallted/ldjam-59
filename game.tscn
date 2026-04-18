@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c86s3p84pqpl0"]
+
+[ext_resource type="Script" uid="uid://d3y1cb6tqyug5" path="res://game.gd" id="1_80nbo"]
+
+[node name="Game" type="Node2D" unique_id=1262635611]
+script = ExtResource("1_80nbo")
+
+[node name="Label" type="Label" parent="." unique_id=96341208]
+offset_left = 465.0
+offset_top = 272.0
+offset_right = 807.0
+offset_bottom = 552.0
+theme_override_font_sizes/font_size = 48
+text = "MIC CHECK (dupa5)"

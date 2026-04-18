@@ -1,33 +1,28 @@
 [gd_scene format=3 uid="uid://dwp3igcc7lv7r"]
 
 [ext_resource type="Script" uid="uid://cu6paxujgyctj" path="res://canvas.gd" id="1_75aqd"]
+[ext_resource type="Shader" uid="uid://b2i0ttumm0jwq" path="res://fractal.gdshader" id="2_pfdkn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75aqd"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8, 0.28627452, 0.8, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15w7l"]
+shader = ExtResource("2_pfdkn")
+shader_parameter/zoom = 0.0
+shader_parameter/center = Vector2(0.72, 0.395)
+shader_parameter/c = Vector2(0.3, 0.48)
+shader_parameter/color_phase = 0.0
+shader_parameter/color_freq = 1.0
+shader_parameter/thresh = 200.0
+shader_parameter/hue_coef = 0.4
 
-[node name="Canvas" type="Control" unique_id=531768555]
+[sub_resource type="CanvasTexture" id="CanvasTexture_k4n84"]
+
+[node name="Fractal" type="Control" unique_id=531768555]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -1.0
-offset_right = -945.0
-offset_bottom = -450.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_75aqd")
 
-[node name="Panel" type="Panel" parent="." unique_id=805259941]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_75aqd")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=656123526]
+material = SubResource("ShaderMaterial_15w7l")
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 256.0
+texture = SubResource("CanvasTexture_k4n84")

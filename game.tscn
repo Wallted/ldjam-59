@@ -1,14 +1,31 @@
 [gd_scene format=3 uid="uid://c86s3p84pqpl0"]
 
 [ext_resource type="Script" uid="uid://d3y1cb6tqyug5" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://gn1jj46s62dm" path="res://player_space.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://dwp3igcc7lv7r" path="res://canvas.tscn" id="3_feb5d"]
 
-[node name="Game" type="Node2D" unique_id=1262635611]
+[node name="Game" type="Control" unique_id=1684369373]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_80nbo")
 
-[node name="Label" type="Label" parent="." unique_id=96341208]
-offset_left = 465.0
-offset_top = 272.0
-offset_right = 807.0
-offset_bottom = 552.0
-theme_override_font_sizes/font_size = 48
-text = "MIC CHECK (dupa5)"
+[node name="PlayerSpace" parent="." unique_id=1828854927 instance=ExtResource("2_e2o6t")]
+layout_mode = 1
+
+[node name="TargetCanvas" parent="." unique_id=531768555 instance=ExtResource("3_feb5d")]
+layout_mode = 1
+offset_left = 660.0
+offset_top = 53.0
+offset_right = -286.0
+offset_bottom = -396.0
+
+[node name="CurrentCanvas" parent="." unique_id=402778540 instance=ExtResource("3_feb5d")]
+layout_mode = 1
+offset_left = 281.0
+offset_top = 75.0
+offset_right = -665.0
+offset_bottom = -374.0

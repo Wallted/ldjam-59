@@ -9,7 +9,7 @@ jobs:
     runs-on: self-hosted
 
     container:
-      image: ${{ vars.DOCKER_REGISTRY }}/godot:4.5.1-stable
+      image: ${{ vars.DOCKER_REGISTRY }}/godot:4.6.2-stable
 
     steps:
       - name: Checkout repository

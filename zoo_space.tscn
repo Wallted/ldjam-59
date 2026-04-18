@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b7c34bojqhp7f"]
 
 [ext_resource type="Script" uid="uid://dx7rhev8ci3we" path="res://zoo_space.gd" id="1_bavwg"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_j28k4"]
+[ext_resource type="Script" uid="uid://rnloc0u2j2sq" path="res://animal.gd" id="3_uhnk5"]
 
 [node name="ZooSpace" type="Control" unique_id=1828854927]
 layout_mode = 3
@@ -14,3 +16,21 @@ offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bavwg")
+
+[node name="Tiles" type="Node2D" parent="." unique_id=350538924]
+
+[node name="Animal" type="Node2D" parent="." unique_id=1229678240 node_paths=PackedStringArray("zoo_space")]
+position = Vector2(90, 83)
+script = ExtResource("3_uhnk5")
+zoo_space = NodePath("..")
+
+[node name="TextureButton" type="TextureButton" parent="Animal" unique_id=1047026273]
+offset_left = -64.0
+offset_top = -68.0
+offset_right = 64.0
+offset_bottom = 60.0
+keep_pressed_outside = true
+texture_normal = ExtResource("2_j28k4")
+
+[connection signal="button_down" from="Animal/TextureButton" to="Animal" method="_on_texture_button_button_down"]
+[connection signal="button_up" from="Animal/TextureButton" to="Animal" method="_on_texture_button_button_up"]

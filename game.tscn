@@ -16,19 +16,23 @@ script = ExtResource("1_80nbo")
 
 [node name="ZooSpace" parent="." unique_id=1828854927 instance=ExtResource("2_e2o6t")]
 layout_mode = 1
+offset_left = 243.0
+offset_top = 49.0
+offset_right = -235.0
+offset_bottom = -38.0
 
 [node name="TargetFractal" parent="." unique_id=531768555 instance=ExtResource("3_feb5d")]
 layout_mode = 1
-offset_left = 660.0
-offset_top = 53.0
-offset_right = -286.0
-offset_bottom = -396.0
+offset_left = 939.0
+offset_top = 8.0
+offset_right = -7.0
+offset_bottom = -441.0
 
 [node name="CurrentFractal" parent="." unique_id=402778540 instance=ExtResource("3_feb5d")]
 layout_mode = 1
-offset_left = 281.0
-offset_top = 75.0
-offset_right = -665.0
-offset_bottom = -374.0
+offset_left = 13.0
+offset_top = 7.0
+offset_right = -933.0
+offset_bottom = -442.0
 
 [node name="Audio" parent="." unique_id=245871639 instance=ExtResource("4_fc0e3")]

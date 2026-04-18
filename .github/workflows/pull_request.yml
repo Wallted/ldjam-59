@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    name: Build
+    runs-on: self-hosted
+
+    container:
+      image: ${{ vars.DOCKER_REGISTRY }}/godot:4.5.1-stable
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Export project
+        run: |
+          rm -rf $HOME/.local/share/godot/ && mkdir -p $HOME/.local/share/godot/
+          mv /opt/godot/* $HOME/.local/share/godot/
+
+          rm -rf ../build && mkdir ../build
+          godot --headless --export-release 'Web' project.godot
+          ls -l ../build

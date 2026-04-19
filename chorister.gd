@@ -11,7 +11,7 @@ var grid_animal: GridAnimal
 
 func _init(freq: float) -> void:
 	change_freq(freq)
-
+	
 
 func synthesize():
 	var frame = _specific_math()

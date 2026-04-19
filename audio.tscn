@@ -4,7 +4,6 @@
 [ext_resource type="AudioStream" uid="uid://d1n6lwxwusg4k" path="res://new_audio_stream_generator.tres" id="2_q45hi"]
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_qc0l7"]
-buffer_length = 0.1
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_q45hi"]
 buffer_length = 0.1
@@ -16,27 +15,6 @@ buffer_length = 0.1
 buffer_length = 0.1
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_8w7rj"]
-buffer_length = 0.1
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_74vr2"]
-buffer_length = 0.1
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_x5nyw"]
-buffer_length = 0.1
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_0svpk"]
-buffer_length = 0.1
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_5olcg"]
-buffer_length = 0.1
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_pgqns"]
-buffer_length = 0.1
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_564a7"]
-buffer_length = 0.1
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_cqcg1"]
 buffer_length = 0.1
 
 [node name="Audio" type="Node" unique_id=245871639]
@@ -71,38 +49,3 @@ bus = &"New Bus 4"
 stream = SubResource("AudioStreamGenerator_8w7rj")
 autoplay = true
 bus = &"New Bus 5"
-
-[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=420124]
-stream = SubResource("AudioStreamGenerator_74vr2")
-autoplay = true
-bus = &"New Bus 6"
-
-[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=445022533]
-stream = SubResource("AudioStreamGenerator_x5nyw")
-autoplay = true
-bus = &"New Bus 7"
-
-[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=614393041]
-stream = SubResource("AudioStreamGenerator_0svpk")
-autoplay = true
-bus = &"New Bus 8"
-
-[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=604287669]
-stream = SubResource("AudioStreamGenerator_5olcg")
-autoplay = true
-bus = &"New Bus 9"
-
-[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=1232485476]
-stream = SubResource("AudioStreamGenerator_pgqns")
-autoplay = true
-bus = &"New Bus 10"
-
-[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=1375281481]
-stream = SubResource("AudioStreamGenerator_564a7")
-autoplay = true
-bus = &"New Bus 11"
-
-[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=281633848]
-stream = SubResource("AudioStreamGenerator_cqcg1")
-autoplay = true
-bus = &"New Bus 12"

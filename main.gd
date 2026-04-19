@@ -3,30 +3,10 @@ extends Node
 @onready var game: Game = $Game
 
 func _ready() -> void:
-	game.load_new_level(get_level_data(0))
+	var level_idx = 1
+	game.load_new_level(get_level_data(level_idx))
 
-func get_level_data(_idx): 
-	var level_data = { # mock
-		"x": 30,
-		"y": 20,
-		"player_data": [
-			# species, freq
-			[0, 400.0],
-			[0, 600.0],
-		], 
-		"target_data": [
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-			[0, 200.0],
-		],
-	}
+func get_level_data(level_idx):
+	var level_data = LevelData.new()
+	level_data.unmarhshal(level_idx)
 	return level_data

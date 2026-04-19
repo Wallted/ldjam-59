@@ -6,9 +6,9 @@ extends Control
 
 var level: Level
 
-func load_new_level(level_data) -> void:
+func load_new_level(level_data: LevelData) -> void:
 	level = Level.new(level_data)
-	
+
 	audio.level = level
 	audio.who_sings = Audio.WhoSings.Target
 	zoo_space.level = level

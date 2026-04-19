@@ -8,7 +8,6 @@ enum ChoristerEnum {
 	DELAILER,
 	TIGEREVERBER
 }
-
 	
 var ChoristerMap = {
 	ChoristerEnum.CHORIPRACTER: Choripracter,
@@ -20,7 +19,6 @@ var ChoristerMap = {
 }
 
 var ChoristerResMap = {
-	ChoristerEnum.SINOCEROS: preload("res://icon.svg")
 	ChoristerEnum.CHORIPRACTER:  preload("res://icon.svg"),
 	ChoristerEnum.SINOCEROS:  preload("res://icon.svg"),
 	ChoristerEnum.QUDRATOPPATOR:  preload("res://icon.svg"),

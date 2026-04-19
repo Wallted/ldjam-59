@@ -11,4 +11,5 @@ script = ExtResource("1_0xm2m")
 
 [node name="Menu" parent="." unique_id=173088223 instance=ExtResource("4_1bvp3")]
 
+[connection signal="go_to_menu" from="Game" to="." method="show_menu"]
 [connection signal="on_level_change" from="Menu" to="." method="set_level"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://br7df35ubqh7p"]
+
+[ext_resource type="Script" uid="uid://dakb5vyt6a7g8" path="res://volume_control.gd" id="1_lv6wy"]
+[ext_resource type="Texture2D" uid="uid://bnlebu6wxjql" path="res://assets/speaker.png" id="2_dfm0f"]
+
+[node name="VolumeControl" type="Node2D" unique_id=711890124]
+script = ExtResource("1_lv6wy")
+
+[node name="MuteButton" type="TextureButton" parent="." unique_id=1140061242]
+offset_right = 36.0
+offset_bottom = 36.0
+texture_normal = ExtResource("2_dfm0f")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VolumeSlider" type="HSlider" parent="." unique_id=394334118]
+offset_left = 36.0
+offset_top = 6.0
+offset_right = 106.3125
+offset_bottom = 31.0

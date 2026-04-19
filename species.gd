@@ -6,7 +6,7 @@ enum ChoristerEnum {
 	QUDRATOPPATOR,
 	OGGAZELE,
 	DELAILER,
-	TIGEREVERBER
+	TIGEREVERBER,
 }
 	
 var ChoristerMap = {
@@ -15,7 +15,7 @@ var ChoristerMap = {
 	ChoristerEnum.QUDRATOPPATOR: Qudratoppator,
 	ChoristerEnum.OGGAZELE: Oggazele,
 	ChoristerEnum.DELAILER: Delailer,
-	ChoristerEnum.TIGEREVERBER: Tigereverber
+	ChoristerEnum.TIGEREVERBER: Tigereverber,
 }
 
 var ChoristerResMap = {
@@ -24,5 +24,15 @@ var ChoristerResMap = {
 	ChoristerEnum.QUDRATOPPATOR:  preload("res://icon.svg"),
 	ChoristerEnum.OGGAZELE:  preload("res://icon.svg"),
 	ChoristerEnum.DELAILER:  preload("res://icon.svg"),
-	ChoristerEnum.TIGEREVERBER:  preload("res://icon.svg")
+	ChoristerEnum.TIGEREVERBER:  preload("res://icon.svg"),
+}
+
+# set in audio._ready() xDDD
+var ChoristerAudioStreamPlayer = {
+	ChoristerEnum.CHORIPRACTER: null,
+	ChoristerEnum.SINOCEROS: null,
+	ChoristerEnum.QUDRATOPPATOR: null,
+	ChoristerEnum.OGGAZELE: null,
+	ChoristerEnum.DELAILER: null,
+	ChoristerEnum.TIGEREVERBER: null,
 }

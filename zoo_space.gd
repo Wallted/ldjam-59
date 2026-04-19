@@ -10,15 +10,21 @@ const ANIMAL = preload("res://animal.tscn")
 
 var grid_size_scaled: Vector2
 
-func _ready() -> void:
-	grid_generate()
-	animals_setup([ANIMAL.instantiate(), ANIMAL.instantiate()])
+var level: Level
 
-func animals_setup(animals: Array[Animal]):
-	for animal in animals:
-		animal.zoo_space = self
-		animal.position = Vector2(randi_range(0, int(grid_size_scaled.x)), randi_range(0, int(grid_size_scaled.y)))
-		add_child(animal)
+func _ready() -> void:
+	pass
+
+func initialize():
+	grid_generate()
+	spawn_animals(level.player_choir)
+
+func spawn_animals(choristers: Array[Chorister]):
+	for chorister in choristers:
+		chorister.animal = ANIMAL.instantiate()
+		chorister.animal.zoo_space = self
+		chorister.animal.position = Vector2(randi_range(0, int(grid_size_scaled.x)), randi_range(0, int(grid_size_scaled.y)))
+		add_child(chorister.animal)
 
 func grid_generate():
 	var tile_size = tilemap.tile_set.tile_size

@@ -13,13 +13,11 @@ enum WhoSings{
 
 var who_sings := WhoSings.None
 
-var player_choir: Array[Chorister] = []
-var target_choir: Array[Chorister] = []
 var audio_stream_player_table: Array[AudioStreamPlayer] = []
 
 @onready var _audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
-@onready var _playback: AudioStreamPlayback = _audio_stream_player.get_stream_playback()
 
+var level: Level
 
 func _ready() -> void:
 	_audio_stream_player.stream.mix_rate = config_sample_hz
@@ -28,9 +26,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	match who_sings:
 		WhoSings.Target:
-			_fill_buffer(target_choir)
+			_fill_buffer(level.target_choir)
 		WhoSings.Player:
-			_fill_buffer(player_choir)
+			_fill_buffer(level.player_choir)
 
 
 func _fill_buffer(choir: Array[Chorister]) -> void:

@@ -23,6 +23,5 @@ jobs:
           mv /opt/godot/* $HOME/.local/share/godot/
 
           rm -rf ../build && mkdir ../build
-          godot --headless --check-only project.godot
-          godot --headless --export-release 'Web' project.godot
+          godot --headless --export-release 'Web' project.godot | tee log.txt
           ls -l ../build

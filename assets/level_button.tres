@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://d1gngm1geoatt"]
+
+[ext_resource type="Texture2D" uid="uid://n17fjm16wy2k" path="res://assets/level_button_bg.png" id="1_ttg5h"]
+
+[resource]
+texture = ExtResource("1_ttg5h")
+texture_margin_left = 8.0
+texture_margin_top = 10.0
+texture_margin_right = 16.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(4, 2, 60, 60)

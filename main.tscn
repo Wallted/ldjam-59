@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" uid="uid://beok7fm2xinr0" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c86s3p84pqpl0" path="res://game.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bigt0rwikh05l" path="res://menu/menu.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node" unique_id=1733157182]
 script = ExtResource("1_0xm2m")
 
 [node name="Game" parent="." unique_id=1262635611 instance=ExtResource("1_ig7tw")]
+
+[node name="Menu" parent="." unique_id=173088223 instance=ExtResource("4_1bvp3")]
+
+[connection signal="on_level_change" from="Menu" to="." method="set_level"]

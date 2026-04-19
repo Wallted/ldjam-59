@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://gbudv1i2une2"]
+
+[ext_resource type="StyleBox" uid="uid://d1gngm1geoatt" path="res://assets/level_button.tres" id="1_pbqjf"]
+[ext_resource type="Script" uid="uid://cu3bv20eod1gs" path="res://menu/level_button/level_button.gd" id="2_or0e7"]
+
+[node name="LevelButton" type="Button" unique_id=582310369]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("1_pbqjf")
+script = ExtResource("2_or0e7")

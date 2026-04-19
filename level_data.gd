@@ -4,8 +4,8 @@ extends RefCounted
 var x: int
 var y: int
 
-var player_data: Array # [species, freq]
-var target_data: Array # [species, freq]
+var player_data: Array # [species, x, y]
+var target_data: Array # [species, x, y]
 
 func marshal() -> String:
 	var data = {

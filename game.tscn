@@ -3,9 +3,29 @@
 [ext_resource type="Script" uid="uid://d3y1cb6tqyug5" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://b7c34bojqhp7f" path="res://zoo_space.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dwp3igcc7lv7r" path="res://canvas.tscn" id="3_feb5d"]
-[ext_resource type="PackedScene" uid="uid://p5wnbaqonghd" path="res://play_button.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://rtb0cvf0pxp1" path="res://audio.tscn" id="4_fc0e3"]
+[ext_resource type="Shader" uid="uid://b2i0ttumm0jwq" path="res://fractal.gdshader" id="4_ryrav"]
 [ext_resource type="PackedScene" uid="uid://br7df35ubqh7p" path="res://volume_control.tscn" id="6_ryrav"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
+shader = ExtResource("4_ryrav")
+shader_parameter/zoom = 0.0
+shader_parameter/center = Vector2(0, 0)
+shader_parameter/c = Vector2(0.48, 0.3)
+shader_parameter/color_phase = 0.0
+shader_parameter/color_freq = 1.0
+shader_parameter/thresh = 200.0
+shader_parameter/hue_coef = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eow3j"]
+shader = ExtResource("4_ryrav")
+shader_parameter/zoom = 0.0
+shader_parameter/center = Vector2(0, 0)
+shader_parameter/c = Vector2(0.3, 0.48)
+shader_parameter/color_phase = 0.0
+shader_parameter/color_freq = 1.0
+shader_parameter/thresh = 200.0
+shader_parameter/hue_coef = 0.4
 
 [node name="Game" type="Control" unique_id=1684369373]
 layout_mode = 3
@@ -18,44 +38,31 @@ script = ExtResource("1_80nbo")
 
 [node name="ZooSpace" parent="." unique_id=1828854927 instance=ExtResource("2_e2o6t")]
 layout_mode = 1
-offset_left = 328.0
-offset_top = 68.0
-offset_right = -70.0
-offset_bottom = -89.0
-
-[node name="TargetFractal" parent="." unique_id=531768555 instance=ExtResource("3_feb5d")]
-layout_mode = 1
-offset_left = 14.0
-offset_top = 327.0
-offset_right = 14.0
-offset_bottom = 327.0
-
-[node name="PlayButton" parent="TargetFractal" unique_id=1187659698 instance=ExtResource("4_7jktm")]
-layout_mode = 1
-offset_left = 72.0
-offset_top = 236.0
-offset_right = 72.0
-offset_bottom = 236.0
+offset_left = 329.0
+offset_top = 32.0
+offset_right = -326.0
+offset_bottom = -94.0
 
 [node name="CurrentFractal" parent="." unique_id=402778540 instance=ExtResource("3_feb5d")]
+material = SubResource("ShaderMaterial_ryrav")
 layout_mode = 1
-offset_left = 15.0
-offset_top = 21.0
-offset_right = 15.0
-offset_bottom = 21.0
+offset_left = 861.0
+offset_top = 310.0
+offset_right = 861.0
+offset_bottom = 310.0
 
-[node name="PlayButton" parent="CurrentFractal" unique_id=13145799 instance=ExtResource("4_7jktm")]
+[node name="TargetFractal" parent="." unique_id=531768555 instance=ExtResource("3_feb5d")]
+material = SubResource("ShaderMaterial_eow3j")
 layout_mode = 1
-offset_left = 67.0
-offset_top = 235.0
-offset_right = 67.0
-offset_bottom = 235.0
+offset_left = 41.0
+offset_top = 310.0
+offset_right = 41.0
+offset_bottom = 310.0
 
 [node name="Audio" parent="." unique_id=245871639 instance=ExtResource("4_fc0e3")]
 
 [node name="VolumeControl" parent="." unique_id=711890124 instance=ExtResource("6_ryrav")]
 position = Vector2(595, 15)
 
-[connection signal="interaction" from="TargetFractal/PlayButton" to="." method="_on_play_button" binds= [false]]
-[connection signal="interaction" from="CurrentFractal/PlayButton" to="." method="_on_play_button" binds= [true]]
-[connection signal="volume_slider_change" from="VolumeControl" to="Audio" method="_on_volume_slider_change"]
+[connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]
+[connection signal="interaction" from="TargetFractal" to="." method="_on_play_button" binds= [false]]

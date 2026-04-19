@@ -15,9 +15,9 @@ var who_sings := WhoSings.None
 
 var audio_stream_player_table: Array[AudioStreamPlayer] = []
 
-var level: Level
-
 @onready var _audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
+var level: Level
 
 func _ready() -> void:
 	_audio_stream_player.stream.mix_rate = config_sample_hz

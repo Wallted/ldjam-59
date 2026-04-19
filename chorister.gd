@@ -8,10 +8,9 @@ var _increment := 0.0
 
 var animal: Animal
 
-
 func _init(freq: float) -> void:
 	change_freq(freq)
-	
+
 
 func synthesize():
 	var frame = _specific_math()

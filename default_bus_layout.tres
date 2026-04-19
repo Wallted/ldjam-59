@@ -2,186 +2,86 @@
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
 resource_name = "Compressor"
-
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_g28q7"]
-resource_name = "Compressor"
-threshold = -12.9
+threshold = -7.5
 
 [sub_resource type="AudioEffectChorus" id="AudioEffectChorus_j3pel"]
 resource_name = "Chorus"
-voice_count = 3
-dry = 0.0
 wet = 1.0
-voice/1/delay_ms = 34.29
-voice/1/rate_hz = 1.7
-voice/1/depth_ms = 3.81
-voice/1/cutoff_hz = 3794.0
-voice/2/rate_hz = 1.0
-voice/2/cutoff_hz = 1947.0
-voice/2/pan = -0.65
-voice/3/delay_ms = 12.0
-voice/3/rate_hz = 2.0
-voice/3/depth_ms = 0.0
-voice/3/level_db = 0.0
-voice/3/cutoff_hz = 4727.0
-voice/3/pan = 0.0
-
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_n8wo2"]
-resource_name = "Compressor"
-threshold = -12.7
-gain = 4.1
-
-[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_j3pel"]
-resource_name = "Phaser"
-range_min_hz = 400.754
-range_max_hz = 1494.473
-rate_hz = 5.965
-feedback = 0.6
-
-[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
-resource_name = "Reverb"
-room_size = 0.49
-hipass = 0.5
-
-[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_j3pel"]
-resource_name = "EQ"
-
-[sub_resource type="AudioEffectChorus" id="AudioEffectChorus_g28q7"]
-resource_name = "Chorus"
-voice_count = 1
-dry = 0.14
-wet = 1.0
-voice/1/delay_ms = 0.0
-voice/1/rate_hz = 3.2
-voice/1/cutoff_hz = 4045.0
-voice/1/pan = 0.01
-
-[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_g28q7"]
-resource_name = "Distortion"
-mode = 3
-keep_hf_hz = 9576.0
-drive = 0.75
-
-[sub_resource type="AudioEffectChorus" id="AudioEffectChorus_n8wo2"]
-resource_name = "Chorus"
-
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_5t1r3"]
-resource_name = "Compressor"
-
-[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
-resource_name = "LowPassFilter"
-cutoff_hz = 6839.0
-resonance = 1.0
-
-[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n8wo2"]
-resource_name = "Reverb"
-room_size = 0.5
-damping = 0.11
-hipass = 1.0
-dry = 0.22
-wet = 0.95
-
-[sub_resource type="AudioEffectFilter" id="AudioEffectFilter_j3pel"]
-resource_name = "Filter"
-cutoff_hz = 3665.0
-
-[sub_resource type="AudioEffectChorus" id="AudioEffectChorus_5t1r3"]
-resource_name = "Chorus"
-
-[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_j3pel"]
-resource_name = "Distortion"
-
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_cenje"]
-resource_name = "Compressor"
-
-[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
-resource_name = "Delay"
-
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_dqt2m"]
-resource_name = "Compressor"
-
-[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
-resource_name = "Reverb"
-
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_7kkex"]
-resource_name = "Compressor"
 
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectCompressor_j3pel")
 bus/0/effect/0/enabled = true
 bus/1/name = &"New Bus"
 bus/1/solo = false
-bus/1/mute = true
+bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -0.25048447
+bus/1/volume_db = 0.0
 bus/1/send = &"Master"
-bus/1/effect/0/effect = SubResource("AudioEffectCompressor_g28q7")
+bus/1/effect/0/effect = SubResource("AudioEffectChorus_j3pel")
 bus/1/effect/0/enabled = true
-bus/1/effect/1/effect = SubResource("AudioEffectChorus_j3pel")
-bus/1/effect/1/enabled = true
 bus/2/name = &"New Bus 2"
 bus/2/solo = false
-bus/2/mute = true
+bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = -0.0016212463
+bus/2/volume_db = 0.0
 bus/2/send = &"Master"
-bus/2/effect/0/effect = SubResource("AudioEffectCompressor_n8wo2")
-bus/2/effect/0/enabled = true
-bus/2/effect/1/effect = SubResource("AudioEffectPhaser_j3pel")
-bus/2/effect/1/enabled = true
-bus/2/effect/2/effect = SubResource("AudioEffectReverb_g28q7")
-bus/2/effect/2/enabled = true
-bus/2/effect/3/effect = SubResource("AudioEffectEQ_j3pel")
-bus/2/effect/3/enabled = true
-bus/2/effect/4/effect = SubResource("AudioEffectChorus_g28q7")
-bus/2/effect/4/enabled = false
-bus/2/effect/5/effect = SubResource("AudioEffectDistortion_g28q7")
-bus/2/effect/5/enabled = true
-bus/2/effect/6/effect = SubResource("AudioEffectChorus_n8wo2")
-bus/2/effect/6/enabled = true
 bus/3/name = &"New Bus 3"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = 0.0
 bus/3/send = &"Master"
-bus/3/effect/0/effect = SubResource("AudioEffectCompressor_5t1r3")
-bus/3/effect/0/enabled = true
-bus/3/effect/1/effect = SubResource("AudioEffectLowPassFilter_j3pel")
-bus/3/effect/1/enabled = true
-bus/3/effect/2/effect = SubResource("AudioEffectReverb_n8wo2")
-bus/3/effect/2/enabled = true
-bus/3/effect/3/effect = SubResource("AudioEffectFilter_j3pel")
-bus/3/effect/3/enabled = true
-bus/3/effect/4/effect = SubResource("AudioEffectChorus_5t1r3")
-bus/3/effect/4/enabled = true
 bus/4/name = &"New Bus 4"
 bus/4/solo = false
-bus/4/mute = true
+bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.0
 bus/4/send = &"Master"
-bus/4/effect/0/effect = SubResource("AudioEffectDistortion_j3pel")
-bus/4/effect/0/enabled = true
-bus/4/effect/1/effect = SubResource("AudioEffectCompressor_cenje")
-bus/4/effect/1/enabled = true
 bus/5/name = &"New Bus 5"
 bus/5/solo = false
-bus/5/mute = true
+bus/5/mute = false
 bus/5/bypass_fx = false
 bus/5/volume_db = 0.0
 bus/5/send = &"Master"
-bus/5/effect/0/effect = SubResource("AudioEffectDelay_j3pel")
-bus/5/effect/0/enabled = true
-bus/5/effect/1/effect = SubResource("AudioEffectCompressor_dqt2m")
-bus/5/effect/1/enabled = true
 bus/6/name = &"New Bus 6"
 bus/6/solo = false
-bus/6/mute = true
+bus/6/mute = false
 bus/6/bypass_fx = false
 bus/6/volume_db = 0.0
 bus/6/send = &"Master"
-bus/6/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
-bus/6/effect/0/enabled = true
-bus/6/effect/1/effect = SubResource("AudioEffectCompressor_7kkex")
-bus/6/effect/1/enabled = true
+bus/7/name = &"New Bus 7"
+bus/7/solo = false
+bus/7/mute = false
+bus/7/bypass_fx = false
+bus/7/volume_db = 0.0
+bus/7/send = &"Master"
+bus/8/name = &"New Bus 8"
+bus/8/solo = false
+bus/8/mute = false
+bus/8/bypass_fx = false
+bus/8/volume_db = 0.0
+bus/8/send = &"Master"
+bus/9/name = &"New Bus 9"
+bus/9/solo = false
+bus/9/mute = false
+bus/9/bypass_fx = false
+bus/9/volume_db = 0.0
+bus/9/send = &"Master"
+bus/10/name = &"New Bus 10"
+bus/10/solo = false
+bus/10/mute = false
+bus/10/bypass_fx = false
+bus/10/volume_db = 0.0
+bus/10/send = &"Master"
+bus/11/name = &"New Bus 11"
+bus/11/solo = false
+bus/11/mute = false
+bus/11/bypass_fx = false
+bus/11/volume_db = 0.0
+bus/11/send = &"Master"
+bus/12/name = &"New Bus 12"
+bus/12/solo = false
+bus/12/mute = false
+bus/12/bypass_fx = false
+bus/12/volume_db = 0.0
+bus/12/send = &"Master"

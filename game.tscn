@@ -16,10 +16,10 @@ script = ExtResource("1_80nbo")
 
 [node name="ZooSpace" parent="." unique_id=1828854927 instance=ExtResource("2_e2o6t")]
 layout_mode = 1
-offset_left = 286.0
-offset_top = 18.0
-offset_right = -16.0
-offset_bottom = -13.0
+offset_left = 328.0
+offset_top = 68.0
+offset_right = -70.0
+offset_bottom = -89.0
 
 [node name="TargetFractal" parent="." unique_id=531768555 instance=ExtResource("3_feb5d")]
 layout_mode = 1

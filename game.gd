@@ -8,12 +8,12 @@ var level: Level
 
 func load_new_level(level_data: LevelData) -> void:
 	level = Level.new(level_data)
-
-func _ready() -> void:
-	# mock
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(110.0))
-	audio.target_choir.append(qudratoppator.new(220.0))
-	audio.target_choir.append(Sinoceros.new(90.0))
+	audio.level = level
+	zoo_space.level = level
 	
-	audio.who_sings = Audio.WhoSings.Target
+	zoo_space.restart()
+
+func _on_play_button(is_pressed: bool, is_player: bool):
+	audio.who_sings = Audio.WhoSings.None
+	if is_pressed:
+		audio.who_sings = Audio.WhoSings.Player if is_player else Audio.WhoSings.Target

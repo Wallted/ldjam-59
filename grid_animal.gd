@@ -2,15 +2,21 @@ class_name GridAnimal
 extends Node2D
 
 @export var zoo_space: ZooSpace
+@onready var texture_button = $TextureButton
 
 const const_lerp_catch_factor_velocity = 1.5
 
 var _is_pressing = false
 var _lerp_factor = 0.0
 var _previous_point: Vector2
+var species_id: int
 
 signal position_changed(new_position: Vector2)
 
+func _ready() -> void:
+	var res = Species.ChoristerResMap[species_id]
+	texture_button.texture_normal = res
+	
 func _process(delta: float) -> void:
 	handle_mouse_drag(delta)
 

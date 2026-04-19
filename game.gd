@@ -17,5 +17,3 @@ func load_new_level() -> void:
 	zoo_space.level = level
 	
 	zoo_space.restart()
-	
-	print(JSON.stringify(level))

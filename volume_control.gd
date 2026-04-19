@@ -19,11 +19,10 @@ func _ready() -> void:
 
 func toggle_mute():
 	self.is_muted = !self.is_muted
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), self.is_muted)
 	if self.is_muted:
 		self.mute_button.texture_normal = SPEAKER_MUTED
-		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
 	else:
-		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
 		self.mute_button.texture_normal = SPEAKER
 
 

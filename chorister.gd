@@ -8,6 +8,7 @@ var _increment := 0.0
 
 var grid_animal: GridAnimal
 
+
 func _init(freq: float) -> void:
 	change_freq(freq)
 

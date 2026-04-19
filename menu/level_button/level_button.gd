@@ -1,4 +1,4 @@
 class_name LevelButton
 extends Button
 
-var level: int = 0
+var level_idx: int = 0

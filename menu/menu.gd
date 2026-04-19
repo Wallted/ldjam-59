@@ -13,17 +13,17 @@ func _ready() -> void:
 	var side_length = ceil(sqrt(LEVELS_COUNT));
 	var cell_size = level_container.size / side_length - Vector2(20, 20);
 	var i = 0
-	for level in LEVELS_COUNT:
+	for level_idx in LEVELS_COUNT:
 		i += 1
 		var button = LEVEL_BUTTON.instantiate()
 		button.custom_minimum_size = cell_size
 		button.pressed.connect(change_level.bind(button))
 		button.text = str(i)
-		button.level = i
+		button.level_idx = i
 		button.show()
 		level_container.add_child(button)
 
 
 func change_level(button: LevelButton) -> void:
 	print(button)
-	on_level_change.emit(button.level)
+	on_level_change.emit(button.level_idx)

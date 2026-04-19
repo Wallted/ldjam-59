@@ -7,12 +7,12 @@ var y: int
 var player_choir: Array[Chorister] = []
 var target_choir: Array[Chorister] = []
 
-func _init(level_data) -> void:
-	x = level_data['x']
-	y = level_data['y'] 
+func _init(level_data: LevelData) -> void:
+	x = level_data.x
+	y = level_data.y
 	
-	var player_data  = level_data['player_data']
-	var target_data = level_data['target_data']
+	var player_data  = level_data.player_data
+	var target_data = level_data.target_data
 
 	initialize_choir(player_data, target_data)
 

@@ -17,6 +17,9 @@ buffer_length = 0.1
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_8w7rj"]
 buffer_length = 0.1
 
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_74vr2"]
+buffer_length = 0.1
+
 [node name="Audio" type="Node" unique_id=245871639]
 script = ExtResource("1_qc0l7")
 
@@ -28,24 +31,29 @@ autoplay = true
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=1265999224]
 stream = ExtResource("2_q45hi")
 autoplay = true
-bus = &"New Bus"
+bus = &"Choripracter"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=348801532]
 stream = SubResource("AudioStreamGenerator_q45hi")
 autoplay = true
-bus = &"New Bus 2"
+bus = &"Sinoceros"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=875342545]
 stream = SubResource("AudioStreamGenerator_ybffx")
 autoplay = true
-bus = &"New Bus 3"
+bus = &"Qudratoppator"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=1682209535]
 stream = SubResource("AudioStreamGenerator_p423y")
 autoplay = true
-bus = &"New Bus 4"
+bus = &"Oggazele"
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=112368598]
 stream = SubResource("AudioStreamGenerator_8w7rj")
 autoplay = true
-bus = &"New Bus 5"
+bus = &"Delailer"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=183567944]
+stream = SubResource("AudioStreamGenerator_74vr2")
+autoplay = true
+bus = &"Tigereverber"

@@ -9,7 +9,6 @@ var _is_pressing = false
 var _lerp_factor = 0.0
 var _previous_point: Vector2
 
-var _local_position_normalized: Vector2
 signal position_changed(new_position: Vector2)
 
 func _process(delta: float) -> void:
@@ -30,14 +29,11 @@ func handle_mouse_drag(delta: float):
 
 	if is_in_bounds:
 		_previous_point = global_position
-		_local_position_normalized = zoo_space.grid_get_local_position_normalized(global_position)
-		position_changed.emit(_local_position_normalized)
-		update_label('%s' % _local_position_normalized)
+		var local_position_normalized = zoo_space.grid_get_local_position_normalized(global_position)
+		position_changed.emit(local_position_normalized)
+		update_label('%s' % local_position_normalized)
 	else:
 		update_label('OOO')
-
-func get_normalized_postion():
-	return _local_position_normalized
 
 func _on_texture_button_button_up() -> void:
 	_is_pressing = false

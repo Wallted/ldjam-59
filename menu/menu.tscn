@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bigt0rwikh05l"]
+
+[ext_resource type="Script" uid="uid://btrd576urii3v" path="res://menu/menu.gd" id="1_lti8b"]
+
+[node name="Menu" type="Control" unique_id=173088223]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_lti8b")
+
+[node name="LevelContainer" type="FlowContainer" parent="." unique_id=2126977126]
+custom_minimum_size = Vector2(222, 222)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+last_wrap_alignment = 2

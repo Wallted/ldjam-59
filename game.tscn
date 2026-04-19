@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d3y1cb6tqyug5" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://b7c34bojqhp7f" path="res://zoo_space.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dwp3igcc7lv7r" path="res://canvas.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://p5wnbaqonghd" path="res://play_button.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://rtb0cvf0pxp1" path="res://audio.tscn" id="4_fc0e3"]
 
 [node name="Game" type="Control" unique_id=1684369373]
@@ -28,6 +29,13 @@ offset_top = 327.0
 offset_right = 14.0
 offset_bottom = 327.0
 
+[node name="PlayButton" parent="TargetFractal" unique_id=1187659698 instance=ExtResource("4_7jktm")]
+layout_mode = 1
+offset_left = 72.0
+offset_top = 236.0
+offset_right = 72.0
+offset_bottom = 236.0
+
 [node name="CurrentFractal" parent="." unique_id=402778540 instance=ExtResource("3_feb5d")]
 layout_mode = 1
 offset_left = 15.0
@@ -35,4 +43,14 @@ offset_top = 21.0
 offset_right = 15.0
 offset_bottom = 21.0
 
+[node name="PlayButton" parent="CurrentFractal" unique_id=13145799 instance=ExtResource("4_7jktm")]
+layout_mode = 1
+offset_left = 67.0
+offset_top = 235.0
+offset_right = 67.0
+offset_bottom = 235.0
+
 [node name="Audio" parent="." unique_id=245871639 instance=ExtResource("4_fc0e3")]
+
+[connection signal="interaction" from="TargetFractal/PlayButton" to="." method="_on_play_button" binds= [false]]
+[connection signal="interaction" from="CurrentFractal/PlayButton" to="." method="_on_play_button" binds= [true]]

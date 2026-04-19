@@ -7,10 +7,15 @@ extends Control
 var level: Level
 
 func _ready() -> void:
+	audio.who_sings = Audio.WhoSings.Target
+	load_new_level()
+
+func load_new_level() -> void:
 	level = Level.new()
 	
 	audio.level = level
-	audio.who_sings = Audio.WhoSings.Target
-	
 	zoo_space.level = level
-	zoo_space.initialize()
+	
+	zoo_space.restart()
+	
+	print(JSON.stringify(level))

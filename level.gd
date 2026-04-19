@@ -9,6 +9,9 @@ var ChoristerMap = {
 	ChoristerSpecies.SINOCEROS: Sinoceros
 }
 
+var x = 4
+var y = 4
+
 var player_choir: Array[Chorister] = []
 var target_choir: Array[Chorister] = []
 

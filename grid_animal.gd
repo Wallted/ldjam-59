@@ -1,4 +1,3 @@
-class_name GridAnimal
 extends Node2D
 
 @export var zoo_space: ZooSpace

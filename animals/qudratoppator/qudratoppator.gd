@@ -1,4 +1,4 @@
-class_name qudratoppator
+class_name Qudratoppator
 extends Chorister
 
 

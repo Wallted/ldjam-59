@@ -4,19 +4,30 @@ extends Control
 @onready var audio: Audio = $Audio
 @onready var zoo_space: ZooSpace = $ZooSpace
 @onready var back_button: BackButton = $BackButton
+@onready var current_fractal: Fractal = $CurrentFractal
+@onready var target_fractal: Fractal = $TargetFractal
 
 var level: Level
 signal go_to_menu()
 
 func _ready():
-	back_button.pressed.connect(func(): go_to_menu.emit())
+	back_button.pressed.connect(_exit_level)
 
 func load_new_level(level_data: LevelData) -> void:
 	level = Level.new(level_data)
 	audio.level = level
 	zoo_space.level = level
 	
+	current_fractal.start(level)
+	target_fractal.start(level)
 	zoo_space.restart()
+
+
+func _exit_level():
+	current_fractal.stop()
+	target_fractal.stop()
+	go_to_menu.emit()
+
 
 func _on_play_button(is_pressed: bool, is_player: bool):
 	audio.who_sings = Audio.WhoSings.None

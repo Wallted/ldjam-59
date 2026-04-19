@@ -1,8 +1,10 @@
 shader_type canvas_item;
 
 uniform float zoom;
-uniform vec2 center;
-uniform vec2 c;
+uniform float center_x;
+uniform float center_y;
+uniform float c_x;
+uniform float c_y;
 uniform float color_phase;
 uniform float color_freq;
 
@@ -16,6 +18,9 @@ uniform float hue_coef;
 
 float julia(vec2 uv, float zoom_adjusted)
 {
+	vec2 center = vec2(center_x, center_y);
+	vec2 c = vec2(c_x, c_y);
+	
 	vec2 p = 2.0 * uv - vec2(1.0, 1.0);
 	vec2 z = center + (p-center)*zoom_adjusted;
 	

@@ -7,8 +7,10 @@ var _phase := 0.0
 var _increment := 0.0
 var _grid_position: Vector2
 
+var species_id: int
 
-func _init(freq: float) -> void:
+func _init(_species_idx: int, freq: float) -> void:
+	species_id = species_id
 	change_freq(freq)
 	
 

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dy070i57b2t76"]
 
-[ext_resource type="Script" uid="uid://rnloc0u2j2sq" path="res://animal.gd" id="1_23vr7"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_ifcgm"]
+[ext_resource type="Script" uid="uid://rnloc0u2j2sq" path="res://grid_animal.gd" id="1_r8eqj"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_drxwl"]
 
-[node name="Animal" type="Node2D" unique_id=1073071156]
+[node name="GridAnimal" type="Node2D" unique_id=1073071156]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_23vr7")
+script = ExtResource("1_r8eqj")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=242882356]
 offset_left = -64.0
@@ -13,7 +13,7 @@ offset_top = -68.0
 offset_right = 64.0
 offset_bottom = 60.0
 keep_pressed_outside = true
-texture_normal = ExtResource("2_ifcgm")
+texture_normal = ExtResource("2_drxwl")
 
 [node name="Label" type="Label" parent="." unique_id=1701436103]
 offset_left = 32.0

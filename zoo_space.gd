@@ -1,7 +1,7 @@
 class_name ZooSpace
 extends Control
 
-const ANIMAL = preload("res://animal.tscn")
+const GRID_ANIMAL = preload("res://grid_animal.tscn")
 
 @onready var tilemap = $TileMapLayer
 
@@ -21,10 +21,10 @@ func initialize():
 
 func spawn_animals(choristers: Array[Chorister]):
 	for chorister in choristers:
-		chorister.animal = ANIMAL.instantiate()
-		chorister.animal.zoo_space = self
-		chorister.animal.position = Vector2(randi_range(0, int(grid_size_scaled.x)), randi_range(0, int(grid_size_scaled.y)))
-		add_child(chorister.animal)
+		chorister.grid_animal = GRID_ANIMAL.instantiate()
+		chorister.grid_animal.zoo_space = self
+		chorister.grid_animal.position = Vector2(randi_range(0, int(grid_size_scaled.x)), randi_range(0, int(grid_size_scaled.y)))
+		add_child(chorister.grid_animal)
 
 func grid_generate():
 	var tile_size = tilemap.tile_set.tile_size

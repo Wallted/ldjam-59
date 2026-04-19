@@ -4,6 +4,20 @@
 [ext_resource type="AudioStream" uid="uid://d1n6lwxwusg4k" path="res://new_audio_stream_generator.tres" id="2_q45hi"]
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_qc0l7"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_qf6oy"]
+buffer_length = 0.1
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_q45hi"]
+buffer_length = 0.1
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_ybffx"]
+buffer_length = 0.1
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_p423y"]
+buffer_length = 0.1
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_8w7rj"]
 buffer_length = 0.1
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_q45hi"]

@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://rtb0cvf0pxp1" path="res://audio.tscn" id="4_fc0e3"]
 [ext_resource type="Shader" uid="uid://b2i0ttumm0jwq" path="res://fractal.gdshader" id="4_ryrav"]
 [ext_resource type="PackedScene" uid="uid://br7df35ubqh7p" path="res://volume_control.tscn" id="6_ryrav"]
+[ext_resource type="Texture2D" uid="uid://krom6crxr00m" path="res://assets/back.png" id="7_eow3j"]
+[ext_resource type="Script" uid="uid://d1loq2yrelpv0" path="res://back_button.gd" id="8_j5wjh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
 shader = ExtResource("4_ryrav")
@@ -63,6 +65,16 @@ offset_bottom = 310.0
 
 [node name="VolumeControl" parent="." unique_id=711890124 instance=ExtResource("6_ryrav")]
 position = Vector2(595, 15)
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=447052563]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 47.0
+offset_right = 240.0
+offset_bottom = 139.0
+texture_normal = ExtResource("7_eow3j")
+stretch_mode = 0
+script = ExtResource("8_j5wjh")
 
 [connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]
 [connection signal="interaction" from="TargetFractal" to="." method="_on_play_button" binds= [false]]

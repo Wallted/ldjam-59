@@ -5,6 +5,10 @@ extends Node
 
 
 func _ready() -> void:
+	show_menu()
+
+
+func show_menu():
 	set_level(0)
 
 

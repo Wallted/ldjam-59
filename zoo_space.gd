@@ -25,13 +25,14 @@ func clear():
 
 func spawn_animals(choristers: Array[Chorister]):
 	for chorister in choristers:
-		chorister.grid_animal = GRID_ANIMAL.instantiate()
-		chorister.grid_animal.zoo_space = self
-		chorister.grid_animal.position = Vector2(randi_range(0, int(grid_size_scaled.x)), randi_range(0, int(grid_size_scaled.y)))
-		add_child(chorister.grid_animal)
+		var grid_animal = GRID_ANIMAL.instantiate()
+		grid_animal.zoo_space = self
+		grid_animal.species_id = chorister.species_id
+		grid_animal.position = Vector2(randi_range(0, int(grid_size_scaled.x)), randi_range(0, int(grid_size_scaled.y)))
+		grid_animal.position_changed.connect(chorister._on_grid_position_changed)
+		add_child(grid_animal)
 
 func grid_generate(dimension_x, dimension_y):
-	
 	var tile_size = tilemap.tile_set.tile_size
 	var wanted_size_x = tile_size.x * dimension_x
 	var wanted_size_y = tile_size.y * dimension_y

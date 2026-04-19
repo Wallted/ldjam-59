@@ -5,11 +5,12 @@ extends RefCounted
 var _freq: float
 var _phase := 0.0
 var _increment := 0.0
+var _grid_position: Vector2
 
-var grid_animal: GridAnimal
+var species_id: int
 
-
-func _init(freq: float) -> void:
+func _init(_species_id: int, freq: float) -> void:
+	species_id = _species_id
 	change_freq(freq)
 	
 
@@ -26,3 +27,6 @@ func change_freq(new_freq: float):
 
 func _specific_math():
 	return 0.0
+
+func _on_grid_position_changed(new_position: Vector2):
+	_grid_position = new_position

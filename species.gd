@@ -7,3 +7,7 @@ enum ChoristerEnum {
 var ChoristerMap = {
 	ChoristerEnum.SINOCEROS: Sinoceros,
 }
+
+var ChoristerResMap = {
+	ChoristerEnum.SINOCEROS: preload("res://icon.svg")
+}

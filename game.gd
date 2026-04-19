@@ -1,21 +1,16 @@
+class_name Game
 extends Control
 
-
 @onready var audio: Audio = $Audio
+@onready var zoo_space: ZooSpace = $ZooSpace
 
+var level: Level
 
 func _ready() -> void:
-	# mock
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
-	audio.target_choir.append(Sinoceros.new(200.0))
+	level = Level.new()
+	
+	audio.level = level
 	audio.who_sings = Audio.WhoSings.Target
+	
+	zoo_space.level = level
+	zoo_space.initialize()

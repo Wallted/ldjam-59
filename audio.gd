@@ -17,6 +17,8 @@ var player_choir: Array[Chorister] = []
 var target_choir: Array[Chorister] = []
 var audio_stream_player_table: Array[AudioStreamPlayer] = []
 
+var level: Level
+
 @onready var _audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var _playback: AudioStreamPlayback = _audio_stream_player.get_stream_playback()
 

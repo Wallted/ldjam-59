@@ -6,6 +6,8 @@ var _freq: float
 var _phase := 0.0
 var _increment := 0.0
 
+var animal: Animal
+
 
 func _init(freq: float) -> void:
 	change_freq(freq)

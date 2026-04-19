@@ -17,7 +17,7 @@ offset_right = 256.0
 offset_bottom = 256.0
 texture = SubResource("CanvasTexture_k4n84")
 
-[node name="PrzyciskOk" type="Sprite2D" parent="." unique_id=779488552]
+[node name="Frame" type="Sprite2D" parent="." unique_id=779488552]
 position = Vector2(165, 157)
 scale = Vector2(0.56, 0.56)
 texture = ExtResource("2_pfdkn")

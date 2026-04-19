@@ -39,3 +39,22 @@ func _on_play_button(is_pressed: bool, is_player: bool):
 	audio.who_sings = Audio.WhoSings.None
 	if is_pressed:
 		audio.who_sings = Audio.WhoSings.Player if is_player else Audio.WhoSings.Target
+	if is_pressed and is_player:
+		var is_solved = check_win_condition()
+		if is_solved:
+			print('glorp')
+		else:
+			print("glorpn't")
+
+func check_win_condition():
+	var leeway = zoo_space.tilemap.tile_set.tile_size;
+	var is_solved = true;
+	var player_choir = zoo_space.level.player_choir;
+	var target_choir = zoo_space.level.target_choir;
+	for i in min(len(player_choir), len(target_choir)):
+		var player_chorist = player_choir[i];
+		var target_chorist = target_choir[i];
+		var diff = abs(player_chorist.grid_position - target_chorist.grid_position);
+		if diff.x > leeway.x or diff.y > leeway.y:
+			is_solved = false;
+	return is_solved;

@@ -9,8 +9,8 @@ var _grid_position: Vector2
 
 var species_id: int
 
-func _init(_species_idx: int, freq: float) -> void:
-	species_id = species_id
+func _init(_species_id: int, freq: float) -> void:
+	species_id = _species_id
 	change_freq(freq)
 	
 

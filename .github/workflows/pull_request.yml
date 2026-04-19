@@ -23,7 +23,7 @@ jobs:
           mv /opt/godot/* $HOME/.local/share/godot/
 
           rm -rf ../build && mkdir ../build
-          godot --headless --export-release 'Web' project.godot | tee log.txt
+          godot --headless --export-release 'Web' project.godot |& tee log.txt
           cat log.txt
           grep "ERROR" log.txt && exit 1
           ls -l ../build

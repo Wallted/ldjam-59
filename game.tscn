@@ -12,8 +12,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
 shader = ExtResource("4_ryrav")
 shader_parameter/zoom = 0.0
-shader_parameter/center = Vector2(0, 0)
-shader_parameter/c = Vector2(0.48, 0.3)
+shader_parameter/center_x = 0.0
+shader_parameter/center_y = 0.0
+shader_parameter/c_x = 0.33
+shader_parameter/c_y = 0.48
 shader_parameter/color_phase = 0.0
 shader_parameter/color_freq = 1.0
 shader_parameter/thresh = 200.0
@@ -22,8 +24,10 @@ shader_parameter/hue_coef = 0.4
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eow3j"]
 shader = ExtResource("4_ryrav")
 shader_parameter/zoom = 0.0
-shader_parameter/center = Vector2(0, 0)
-shader_parameter/c = Vector2(0.3, 0.48)
+shader_parameter/center_x = 0.0
+shader_parameter/center_y = 0.0
+shader_parameter/c_x = 0.0
+shader_parameter/c_y = 0.0
 shader_parameter/color_phase = 0.0
 shader_parameter/color_freq = 1.0
 shader_parameter/thresh = 200.0
@@ -52,6 +56,7 @@ offset_left = 861.0
 offset_top = 310.0
 offset_right = 861.0
 offset_bottom = 310.0
+is_player_fractal = true
 
 [node name="TargetFractal" parent="." unique_id=531768555 instance=ExtResource("3_feb5d")]
 material = SubResource("ShaderMaterial_eow3j")

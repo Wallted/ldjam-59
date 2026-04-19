@@ -16,7 +16,9 @@ signal position_changed(new_position: Vector2)
 func _ready() -> void:
 	var res = Species.ChoristerResMap[species_id]
 	texture_button.texture_normal = res
-	
+	if not _previous_point:
+		_previous_point = global_position
+
 func _process(delta: float) -> void:
 	handle_mouse_drag(delta)
 

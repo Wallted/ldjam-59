@@ -22,6 +22,7 @@ func initialize_choir(player_species, target_species):
 		var choir_array = data_arrays[1] 
 		for item in species_array:
 			var species_id = item[0]
-			var freq = item[1]
-			var chorister = Species.ChoristerMap[species_id].new(species_id, freq)
+			var position_x = item[1]
+			var position_y = item[2]
+			var chorister = Species.ChoristerMap[species_id].new(species_id, position_x, position_y)
 			choir_array.append(chorister)

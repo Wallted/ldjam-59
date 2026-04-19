@@ -28,7 +28,7 @@ func spawn_animals(choristers: Array[Chorister]):
 		var grid_animal = GRID_ANIMAL.instantiate()
 		grid_animal.zoo_space = self
 		grid_animal.species_id = chorister.species_id
-		grid_animal.position = Vector2(randi_range(0, int(grid_size_scaled.x)), randi_range(0, int(grid_size_scaled.y)))
+		grid_animal.position = tilemap.position + (chorister.grid_position * tilemap.scale * Vector2(tilemap.tile_set.tile_size))
 		grid_animal.position_changed.connect(chorister._on_grid_position_changed)
 		add_child(grid_animal)
 

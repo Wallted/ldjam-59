@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://rnloc0u2j2sq" path="res://grid_animal.gd" id="1_r8eqj"]
 
 [node name="GridAnimal" type="Node2D" unique_id=1073071156]
+z_index = 10
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_r8eqj")
 

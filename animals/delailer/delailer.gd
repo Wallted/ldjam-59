@@ -4,7 +4,7 @@ var i: float
 var a:=1.0
 
 func _specific_math():
-	if i<self.grid_position.y*300+5000:
+	if i<self.grid_position.y*300+3000:
 		i+=1
 	else :
 		i=0

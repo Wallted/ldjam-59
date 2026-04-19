@@ -25,4 +25,5 @@ func initialize_choir(player_species, target_species):
 			var position_x = item[1]
 			var position_y = item[2]
 			var chorister = Species.ChoristerMap[species_id].new(species_id, position_x, position_y)
+			chorister.grid_size=Vector2(x,y)
 			choir_array.append(chorister)

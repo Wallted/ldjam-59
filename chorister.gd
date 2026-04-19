@@ -1,7 +1,7 @@
 class_name Chorister
 extends RefCounted
 
-
+var grid_size: Vector2
 var _freq: float
 var _phase := 0.0
 var _increment := 0.0

@@ -102,13 +102,6 @@ cutoff_hz = 3665.0
 [sub_resource type="AudioEffectChorus" id="AudioEffectChorus_5t1r3"]
 resource_name = "Chorus"
 
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_cenje"]
-resource_name = "Compressor"
-threshold = -24.2
-ratio = 48.0
-gain = 1.8
-release_ms = 225.0
-
 [sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_j3pel"]
 resource_name = "HardLimiter"
 pre_gain_db = -14.87
@@ -229,16 +222,14 @@ bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.002822876
 bus/4/send = &"Master"
-bus/4/effect/0/effect = SubResource("AudioEffectCompressor_cenje")
+bus/4/effect/0/effect = SubResource("AudioEffectHardLimiter_j3pel")
 bus/4/effect/0/enabled = true
-bus/4/effect/1/effect = SubResource("AudioEffectHardLimiter_j3pel")
+bus/4/effect/1/effect = SubResource("AudioEffectEQ_n8wo2")
 bus/4/effect/1/enabled = true
-bus/4/effect/2/effect = SubResource("AudioEffectEQ_n8wo2")
+bus/4/effect/2/effect = SubResource("AudioEffectDistortion_j3pel")
 bus/4/effect/2/enabled = true
-bus/4/effect/3/effect = SubResource("AudioEffectDistortion_j3pel")
+bus/4/effect/3/effect = SubResource("AudioEffectPhaser_g28q7")
 bus/4/effect/3/enabled = true
-bus/4/effect/4/effect = SubResource("AudioEffectPhaser_g28q7")
-bus/4/effect/4/enabled = true
 bus/5/name = &"Delailer"
 bus/5/solo = false
 bus/5/mute = false

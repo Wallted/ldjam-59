@@ -35,7 +35,6 @@ func _fill_buffer(choir: Array[Chorister]) -> void:
 	
 	assert(choir.size() <= 12)
 	for i in choir.size():
-		print(i)
 		var playback = audio_stream_player_table[i].get_stream_playback()
 		var to_fill: int = playback.get_frames_available()
 		while to_fill > 0:

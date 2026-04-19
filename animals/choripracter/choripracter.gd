@@ -3,4 +3,4 @@ extends Chorister
 
 
 func _specific_math():
-	return sin(_phase * TAU)-cos(_phase * TAU*2)
+	return sin(_phase * TAU)-cos(_phase * TAU*2) 

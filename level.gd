@@ -14,13 +14,22 @@ var target_choir: Array[Chorister] = []
 
 func _init() -> void:
 	var player_data = [ # mock
-		[ChoristerSpecies.SINOCEROS, 440.0],
-		[ChoristerSpecies.SINOCEROS, 640.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
 	]
 	var target_data = [ # mock
-		[ChoristerSpecies.SINOCEROS, 440.0],
-		[ChoristerSpecies.SINOCEROS, 640.0],
-		[ChoristerSpecies.SINOCEROS, 840.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
+		[ChoristerSpecies.SINOCEROS, 200.0],
 	]
 	initialize_choir(player_data, target_data)
 

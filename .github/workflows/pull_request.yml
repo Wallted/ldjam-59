@@ -24,5 +24,5 @@ jobs:
 
           rm -rf ../build && mkdir ../build
           godot --headless --export-release 'Web' project.godot | tee log.txt
-          grep "ERROR" log.txt && exit 1 || true
+          grep "ERROR" log.txt && exit 1
           ls -l ../build

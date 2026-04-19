@@ -2,11 +2,11 @@ class_name Level
 extends RefCounted
 
 enum ChoristerSpecies {
-	SINOCEROS
+	SINOCEROS,
 }
 
 var ChoristerMap = {
-	ChoristerSpecies.SINOCEROS: Sinoceros
+	ChoristerSpecies.SINOCEROS: Sinoceros,
 }
 
 var x = 4

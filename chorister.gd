@@ -9,6 +9,8 @@ var _increment := 0.0
 var species_id: int
 var grid_position: Vector2
 
+
+
 func _init(_species_id: int, x: float, y: float) -> void:
 	species_id = _species_id
 	grid_position = Vector2(x, y)
@@ -29,6 +31,3 @@ func _specific_math():
 
 func _on_grid_position_changed(new_position: Vector2):
 	grid_position = new_position
-	var _grid_freq: float
-	_grid_freq= 440.0 * pow(2.0,((grid_position.x- 24.0)/12.0))
-	change_freq(_grid_freq)

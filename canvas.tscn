@@ -1,17 +1,7 @@
 [gd_scene format=3 uid="uid://dwp3igcc7lv7r"]
 
 [ext_resource type="Script" uid="uid://cu6paxujgyctj" path="res://canvas.gd" id="1_75aqd"]
-[ext_resource type="Shader" uid="uid://b2i0ttumm0jwq" path="res://fractal.gdshader" id="2_pfdkn"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_15w7l"]
-shader = ExtResource("2_pfdkn")
-shader_parameter/zoom = 0.0
-shader_parameter/center = Vector2(0.72, 0.395)
-shader_parameter/c = Vector2(0.3, 0.48)
-shader_parameter/color_phase = 0.0
-shader_parameter/color_freq = 1.0
-shader_parameter/thresh = 200.0
-shader_parameter/hue_coef = 0.4
+[ext_resource type="Texture2D" uid="uid://bbpahtqmppeyf" path="res://assets/przycisk_ok.png" id="2_pfdkn"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_k4n84"]
 
@@ -21,8 +11,24 @@ anchors_preset = 0
 script = ExtResource("1_75aqd")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=656123526]
-material = SubResource("ShaderMaterial_15w7l")
+use_parent_material = true
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 256.0
 texture = SubResource("CanvasTexture_k4n84")
+
+[node name="Frame" type="Sprite2D" parent="." unique_id=779488552]
+position = Vector2(165, 157)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("2_pfdkn")
+
+[node name="Button" type="Button" parent="." unique_id=1212396923]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 271.0
+offset_right = 201.0
+offset_bottom = 335.0
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

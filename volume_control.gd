@@ -9,7 +9,6 @@ const SPEAKER_MUTED = preload("uid://c3oltv0swl6gp")
 var is_muted: bool = false;
 var volume: int = 100;
 
-signal volume_slider_change(value)
 
 func _ready() -> void:
 	self.mute_button.pressed.connect(toggle_mute)

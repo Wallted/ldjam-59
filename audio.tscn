@@ -17,6 +17,10 @@ buffer_length = 0.1
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_8w7rj"]
 buffer_length = 0.1
 
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_74vr2"]
+mix_rate = 21000.0
+buffer_length = 0.1
+
 [node name="Audio" type="Node" unique_id=245871639]
 script = ExtResource("1_qc0l7")
 
@@ -29,11 +33,13 @@ autoplay = true
 stream = ExtResource("2_q45hi")
 autoplay = true
 bus = &"New Bus"
+playback_type = 1
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=348801532]
 stream = SubResource("AudioStreamGenerator_q45hi")
 autoplay = true
 bus = &"New Bus 2"
+playback_type = 1
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=875342545]
 stream = SubResource("AudioStreamGenerator_ybffx")
@@ -44,8 +50,16 @@ bus = &"New Bus 3"
 stream = SubResource("AudioStreamGenerator_p423y")
 autoplay = true
 bus = &"New Bus 4"
+playback_type = 1
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=112368598]
 stream = SubResource("AudioStreamGenerator_8w7rj")
 autoplay = true
 bus = &"New Bus 5"
+playback_type = 1
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=1499593828]
+stream = SubResource("AudioStreamGenerator_74vr2")
+autoplay = true
+bus = &"New Bus 6"
+playback_type = 1

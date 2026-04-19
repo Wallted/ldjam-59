@@ -6,7 +6,16 @@ extends Control
 
 func _ready() -> void:
 	# mock
-	audio.target_choir.append(Sinoceros.new(440.0))
-	audio.target_choir.append(Sinoceros.new(640.0))
-	audio.target_choir.append(Sinoceros.new(840.0))
-	audio.play_target_choir = true
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.target_choir.append(Sinoceros.new(200.0))
+	audio.who_sings = Audio.WhoSings.Target

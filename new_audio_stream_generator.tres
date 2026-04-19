@@ -1,0 +1,4 @@
+[gd_resource type="AudioStreamGenerator" format=3 uid="uid://d1n6lwxwusg4k"]
+
+[resource]
+buffer_length = 0.1

@@ -3,14 +3,15 @@ extends Node
 @onready var game: Game = $Game
 @onready var menu: Menu = $Menu
 
+
 func _ready() -> void:
 	set_level(0)
 
 
 func _on_level_change(level_idx: int) -> void:
 	set_level(level_idx)
-	
-	
+
+
 func get_level_data(level_idx):
 	var level_data = LevelData.new()
 	level_data.unmarhshal(level_idx)

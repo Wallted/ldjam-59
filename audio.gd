@@ -2,15 +2,20 @@ class_name Audio
 extends Node
 
 
-static var config_sample_hz := 44100.0
+static var config_sample_hz := 22100.0
 
 
-var play_player_choir := false
-var play_target_choir := false
+enum WhoSings{
+	None,
+	Target,
+	Player,
+}
+
+var who_sings := WhoSings.None
 
 var player_choir: Array[Chorister] = []
 var target_choir: Array[Chorister] = []
-
+var audio_stream_player_table: Array[AudioStreamPlayer] = []
 
 @onready var _audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var _playback: AudioStreamPlayback = _audio_stream_player.get_stream_playback()
@@ -18,27 +23,25 @@ var target_choir: Array[Chorister] = []
 
 func _ready() -> void:
 	_audio_stream_player.stream.mix_rate = config_sample_hz
-
+	audio_stream_player_table = [$AudioStreamPlayer/AudioStreamPlayer1,$AudioStreamPlayer/AudioStreamPlayer2,$AudioStreamPlayer/AudioStreamPlayer3,$AudioStreamPlayer/AudioStreamPlayer4,$AudioStreamPlayer/AudioStreamPlayer5,$AudioStreamPlayer/AudioStreamPlayer6,$AudioStreamPlayer/AudioStreamPlayer7,$AudioStreamPlayer/AudioStreamPlayer8,$AudioStreamPlayer/AudioStreamPlayer9,$AudioStreamPlayer/AudioStreamPlayer10,$AudioStreamPlayer/AudioStreamPlayer11,$AudioStreamPlayer/AudioStreamPlayer12]
 
 func _process(_delta: float) -> void:
-	if play_target_choir or play_player_choir:
-		_fill_buffer()
+	match who_sings:
+		WhoSings.Target:
+			_fill_buffer(target_choir)
+		WhoSings.Player:
+			_fill_buffer(player_choir)
 
 
-func _fill_buffer() -> void:
+func _fill_buffer(choir: Array[Chorister]) -> void:
 	
-	var to_fill: int = _playback.get_frames_available()
-	while to_fill > 0:
-		var frame := Vector2.ONE # stereo 1:1
-		if play_target_choir:
-			frame = _synthesize_choir(target_choir, frame)
-		if play_player_choir:
-			frame = _synthesize_choir(player_choir, frame)
-		_playback.push_frame(frame)
-		to_fill -= 1
-
-
-func _synthesize_choir(choir: Array[Chorister], frame: Vector2) -> Vector2:
-	for chorister: Chorister in choir:
-		frame *= chorister.synthesize()
-	return frame
+	assert(choir.size() <= 12)
+	for i in choir.size():
+		print(i)
+		var playback = audio_stream_player_table[i].get_stream_playback()
+		var to_fill: int = playback.get_frames_available()
+		while to_fill > 0:
+			var frame := Vector2.ONE # stereo 1:1
+			frame += Vector2.ONE * choir[i].synthesize()
+			playback.push_frame(frame)
+			to_fill -= 1

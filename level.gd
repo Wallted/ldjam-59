@@ -1,39 +1,19 @@
 class_name Level
 extends RefCounted
 
-enum ChoristerSpecies {
-	SINOCEROS,
-}
-
-var ChoristerMap = {
-	ChoristerSpecies.SINOCEROS: Sinoceros,
-}
-
-var x = 30
-var y = 20
+var x: int
+var y: int
 
 var player_choir: Array[Chorister] = []
 var target_choir: Array[Chorister] = []
 
-func _init() -> void:
-	var player_data = [ # mock
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-	]
-	var target_data = [ # mock
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-		[ChoristerSpecies.SINOCEROS, 200.0],
-	]
+func _init(level_data) -> void:
+	x = level_data['x']
+	y = level_data['y'] 
+	
+	var player_data  = level_data['player_data']
+	var target_data = level_data['target_data']
+
 	initialize_choir(player_data, target_data)
 
 func initialize_choir(player_species, target_species):
@@ -43,5 +23,5 @@ func initialize_choir(player_species, target_species):
 		for item in species_array:
 			var species = item[0]
 			var freq = item[1]
-			var chorister = ChoristerMap[species].new(freq) 
+			var chorister = Species.ChoristerMap[species].new(freq) 
 			choir_array.append(chorister)

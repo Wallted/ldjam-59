@@ -5,7 +5,6 @@ resource_name = "Compressor"
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_g28q7"]
 resource_name = "Compressor"
-threshold = -12.9
 
 [sub_resource type="AudioEffectChorus" id="AudioEffectChorus_j3pel"]
 resource_name = "Chorus"
@@ -28,7 +27,6 @@ voice/3/pan = 0.0
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_n8wo2"]
 resource_name = "Compressor"
-threshold = -12.7
 gain = 4.1
 
 [sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_j3pel"]
@@ -107,13 +105,14 @@ resource_name = "Reverb"
 resource_name = "Compressor"
 
 [resource]
+bus/0/volume_db = 6.0199986
 bus/0/effect/0/effect = SubResource("AudioEffectCompressor_j3pel")
 bus/0/effect/0/enabled = true
 bus/1/name = &"New Bus"
 bus/1/solo = false
-bus/1/mute = true
+bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -0.25048447
+bus/1/volume_db = 6.0199986
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectCompressor_g28q7")
 bus/1/effect/0/enabled = true
@@ -123,7 +122,7 @@ bus/2/name = &"New Bus 2"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = -0.0016212463
+bus/2/volume_db = -0.0060653687
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectCompressor_n8wo2")
 bus/2/effect/0/enabled = true
@@ -141,7 +140,7 @@ bus/2/effect/6/effect = SubResource("AudioEffectChorus_n8wo2")
 bus/2/effect/6/enabled = true
 bus/3/name = &"New Bus 3"
 bus/3/solo = false
-bus/3/mute = true
+bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = 0.0
 bus/3/send = &"Master"
@@ -157,7 +156,7 @@ bus/3/effect/4/effect = SubResource("AudioEffectChorus_5t1r3")
 bus/3/effect/4/enabled = true
 bus/4/name = &"New Bus 4"
 bus/4/solo = false
-bus/4/mute = true
+bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.0
 bus/4/send = &"Master"
@@ -167,7 +166,7 @@ bus/4/effect/1/effect = SubResource("AudioEffectCompressor_cenje")
 bus/4/effect/1/enabled = true
 bus/5/name = &"New Bus 5"
 bus/5/solo = false
-bus/5/mute = true
+bus/5/mute = false
 bus/5/bypass_fx = false
 bus/5/volume_db = 0.0
 bus/5/send = &"Master"
@@ -177,7 +176,7 @@ bus/5/effect/1/effect = SubResource("AudioEffectCompressor_dqt2m")
 bus/5/effect/1/enabled = true
 bus/6/name = &"New Bus 6"
 bus/6/solo = false
-bus/6/mute = true
+bus/6/mute = false
 bus/6/bypass_fx = false
 bus/6/volume_db = 0.0
 bus/6/send = &"Master"

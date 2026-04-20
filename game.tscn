@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://d1loq2yrelpv0" path="res://back_button.gd" id="8_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://ct8ph1n8o8xrc" path="res://assets/trawaseamless1.png" id="9_vef74"]
 [ext_resource type="Texture2D" uid="uid://wo66yqrm4xit" path="res://assets/trawaseamless2.png" id="10_hve3p"]
+[ext_resource type="PackedScene" uid="uid://ckyt7nool2jwj" path="res://led.tscn" id="11_dupa1"]
+[ext_resource type="Texture2D" uid="uid://dmmrb272adx8f" path="res://assets/diode.png" id="12_dupa2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hve3p"]
 texture = ExtResource("9_vef74")
@@ -54,9 +56,6 @@ sources/2 = SubResource("TileSetAtlasSource_rvswv")
 sources/3 = SubResource("TileSetAtlasSource_boyg6")
 sources/4 = SubResource("TileSetAtlasSource_e36ub")
 sources/5 = SubResource("TileSetAtlasSource_hb5m1")
-
-[ext_resource type="PackedScene" uid="uid://ckyt7nool2jwj" path="res://led.tscn" id="9_vef74"]
-[ext_resource type="Texture2D" uid="uid://dmmrb272adx8f" path="res://assets/diode.png" id="10_hve3p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
 shader = ExtResource("4_ryrav")
@@ -140,13 +139,13 @@ texture_normal = ExtResource("7_eow3j")
 stretch_mode = 0
 script = ExtResource("8_j5wjh")
 
-[node name="Led" parent="." unique_id=1528761497 instance=ExtResource("9_vef74")]
+[node name="Led" parent="." unique_id=1528761497 instance=ExtResource("11_dupa1")]
 layout_mode = 0
 offset_left = 775.0
 offset_top = 579.0
 offset_right = 839.0
 offset_bottom = 643.0
-texture = ExtResource("10_hve3p")
+texture = ExtResource("12_dupa2")
 
 [node name="UfoGroup" type="Node2D" parent="." unique_id=258052472]
 

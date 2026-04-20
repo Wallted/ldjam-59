@@ -2,10 +2,15 @@ extends Node
 
 @onready var game: Game = $Game
 @onready var menu: Menu = $Menu
+@onready var background = $Background
 
 
 func _ready() -> void:
 	show_menu()
+	var rng = RandomNumberGenerator.new()
+	for x in 8:
+		for y in 5:
+			background.set_cell(Vector2(x, y), rng.randi_range(0, 2), Vector2i(0, 0))
 
 
 func show_menu():

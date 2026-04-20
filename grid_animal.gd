@@ -11,9 +11,11 @@ var _is_pressing = false
 var _lerp_factor = 0.0
 var _previous_point: Vector2
 var species_id: int
+var chorister_idx: int
 
 signal position_changed(new_position: Vector2)
 signal animal_dropped()
+signal animal_dragged(chorister_idx)
 
 func _ready() -> void:
 	var res_list = Species.ChoristerResMapPreload[species_id]
@@ -46,6 +48,7 @@ func handle_mouse_drag(delta: float):
 		_lerp_factor += clamp(const_lerp_catch_factor_velocity * delta, 0, 1)
 		global_position = lerp(global_position, global_coords, ease(_lerp_factor, -4.0))
 		zoo_space.grid_process_cell(global_position) # debug
+		animal_dragged.emit(chorister_idx)
 
 	var is_in_bounds = zoo_space.grid_is_in_bounds(global_position)
 

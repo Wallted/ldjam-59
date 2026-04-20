@@ -25,6 +25,14 @@ func _ready() -> void:
 	if tutorial.visible:
 		control.hide()
 
+func set_animal_faces(level_data_array: Array[LevelData]):
+	for i in level_data_array.size():
+		var level_data = level_data_array[i] as LevelData
+		if level_data.template_animal_idx > -1:
+			var level_button = level_container.get_child(i) as LevelButton
+			level_button.mark_animal(level_data.template_animal_idx)
+	
+
 func update_i_na_chate(level_idx: int):
 	var level_button = level_container.get_child(level_idx - 1) as LevelButton
 	level_button.mark_complete()

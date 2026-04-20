@@ -11,6 +11,7 @@ func _process(delta):
 	var distance_to_destination
 	var distance_to_move
 	if position != destination:
+		self.play()
 		distance_to_destination = position.distance_to(destination)
 		distance_to_move = SPEED * delta
 		if abs(distance_to_destination) < abs(distance_to_move):

@@ -9,6 +9,8 @@ var offset: Vector2
 var player_data: Array # [species, x, y]
 var target_data: Array # [species, x, y]
 
+var idx: int
+
 func marshal() -> String:
 	var data = {
 		'x': x,
@@ -22,7 +24,7 @@ func marshal() -> String:
 
 func unmarhshal(level_idx: int) -> void:
 	var level_data = load("res://levels/%02d.json" % level_idx).data
-
+	idx = level_idx
 	x = level_data['x']
 	y = level_data['y']
 	offset = Vector2(level_data['offset_x'], level_data['offset_y'])

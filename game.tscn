@@ -148,5 +148,7 @@ offset_right = 839.0
 offset_bottom = 643.0
 texture = ExtResource("10_hve3p")
 
+[node name="UfoGroup" type="Node2D" parent="." unique_id=258052472]
+
 [connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]
 [connection signal="interaction" from="TargetFractal" to="." method="_on_play_button" binds= [false]]

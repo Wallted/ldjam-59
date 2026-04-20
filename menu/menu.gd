@@ -4,10 +4,9 @@ extends Control
 @onready var level_container: FlowContainer = $LevelContainer
 const LEVEL_BUTTON = preload("uid://gbudv1i2une2")
 
-
 signal on_level_change(level_number: int)  # 0=menu
 
-var LEVELS_COUNT = 2
+const LEVELS_COUNT = 2
 
 func _ready() -> void:
 	var side_length = ceil(sqrt(LEVELS_COUNT));
@@ -23,6 +22,9 @@ func _ready() -> void:
 		button.show()
 		level_container.add_child(button)
 
+func update_i_na_chate(level_idx: int):
+	var level_button = level_container.get_child(level_idx - 1) as LevelButton
+	level_button.mark_complete()
 
 func change_level(button: LevelButton) -> void:
 	print(button)

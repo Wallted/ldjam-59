@@ -14,6 +14,10 @@ func show_menu():
 
 func _on_level_change(level_idx: int) -> void:
 	set_level(level_idx)
+	
+	
+func _on_win(level_idx: int) -> void:
+	self.menu.update_i_na_chate(level_idx)
 
 
 func get_level_data(level_idx):

@@ -9,7 +9,10 @@ var offset: Vector2
 var player_choir: Array[Chorister] = []
 var target_choir: Array[Chorister] = []
 
+var idx: int
+
 func _init(level_data: LevelData) -> void:
+	idx = level_data.idx
 	x = level_data.x
 	y = level_data.y
 

@@ -8,16 +8,19 @@ extends Control
 @onready var target_fractal: Fractal = $TargetFractal
 @onready var background = $Background
 const UFO = preload("uid://cmtktioq7jdad")
+@onready var ufo_group: Node2D = $UfoGroup
 @onready var led: Led = $Led
 
 var level: Level
 signal go_to_menu()
+signal win()
 
 var rng = RandomNumberGenerator.new()
 
 func _ready():
 	back_button.pressed.connect(_exit_level)
 	led.reset()
+
 
 func load_new_level(level_data: LevelData) -> void:
 	level = Level.new(level_data)
@@ -29,7 +32,6 @@ func load_new_level(level_data: LevelData) -> void:
 	zoo_space.restart()
 	led.reset()
 	check_win_condition()
-	
 
 	for x in 8:
 		for y in 5:
@@ -38,6 +40,9 @@ func load_new_level(level_data: LevelData) -> void:
 func _exit_level():
 	current_fractal.stop()
 	target_fractal.stop()
+	for ufo in ufo_group.get_children():
+		ufo_group.remove_child(ufo)
+		ufo.queue_free()
 	go_to_menu.emit()
 
 
@@ -48,13 +53,12 @@ func _on_play_button(is_pressed: bool, is_player: bool):
 	if is_pressed and is_player:
 		check_win_condition()
 		
-			
 func ufo_cleanup():
 	var ufo = UFO.instantiate()
 	var screen = get_viewport_rect()
 	ufo.position = screen.size + Vector2(50.0, -screen.size.y/2)
 	ufo.fly_at(Vector2(-50.0, -50.0))
-	add_child(ufo)
+	ufo_group.add_child(ufo)
 
 func check_win_condition():
 	var is_solved = true;
@@ -72,6 +76,7 @@ func check_win_condition():
 		print('glorp')
 		led.enable()
 		ufo_cleanup()
+		win.emit(level.idx)
 	else:
 		print("glorpn't")
 		led.disable()

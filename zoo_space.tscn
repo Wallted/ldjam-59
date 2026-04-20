@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx7rhev8ci3we" path="res://zoo_space.gd" id="1_bavwg"]
 [ext_resource type="Texture2D" uid="uid://dsl4xevbfipum" path="res://assets/dot_tile.png" id="2_uhnk5"]
-[ext_resource type="Shader" uid="uid://c4queg70ipfus" path="res://zoo_space.gdshader" id="4_5l0d2"]
+[ext_resource type="Shader" path="res://zoo_space.gdshader" id="4_5l0d2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhnk5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

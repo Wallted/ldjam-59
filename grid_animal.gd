@@ -12,6 +12,7 @@ var _previous_point: Vector2
 var species_id: int
 
 signal position_changed(new_position: Vector2)
+signal animal_dropped()
 
 func _ready() -> void:
 	var res = Species.ChoristerResMap[species_id]
@@ -46,6 +47,7 @@ func handle_mouse_drag(delta: float):
 func _on_texture_button_button_up() -> void:
 	_is_pressing = false
 	_lerp_factor = 0.0
+	animal_dropped.emit()
 
 func _on_texture_button_button_down() -> void:
 	_is_pressing = true

@@ -34,7 +34,7 @@ func load_new_level(level_data: LevelData) -> void:
 	if level_data.solved:
 		led.enable()
 	led.disable()
-
+	win_stream.stop()
 
 func _exit_level():
 	current_fractal.stop()

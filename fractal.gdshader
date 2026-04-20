@@ -7,6 +7,9 @@ uniform float c_x;
 uniform float c_y;
 uniform float color_phase;
 uniform float color_freq;
+uniform float hue_weight;
+uniform float fish_eye;
+uniform float rotation_angle;
 
 // constify later
 uniform float thresh;
@@ -21,7 +24,9 @@ float julia(vec2 uv, float zoom_adjusted)
 	vec2 center = vec2(center_x, center_y);
 	vec2 c = vec2(c_x, c_y);
 	
-	vec2 p = 2.0 * uv - vec2(1.0, 1.0);
+	vec2 p = 2.0 * uv - vec2(1.0, 1.0) + center;
+	p = p * pow(p.x * p.x + p.y * p.y, fish_eye * fish_eye - 0.25);
+	p = p * mat2(vec2(sin(rotation_angle), -cos(rotation_angle)), vec2(cos(rotation_angle), sin(rotation_angle)));
 	vec2 z = center + (p-center)*zoom_adjusted;
 	
 	float ld2 = 1.0;
@@ -131,6 +136,6 @@ void fragment() {
 	float sdf = julia(UV, zoom_adjusted);
 	float hue = fract(clamp(pow(sdf / zoom_adjusted, hue_coef + 0.1 * color_freq), 0.0, 1.0) * color_freq + color_phase);
 	
-	vec3 color = vec3(0.5 * (rgb_from_hsv(vec3(hue, 1.0, 1.0)) + rgb_from_oklch(vec3(0.7, 0.15, hue * TAU))));
+	vec3 color = vec3(hue_weight * rgb_from_hsv(vec3(hue, 1.0, 1.0)) + (1.0 - hue_weight) * rgb_from_oklch(vec3(0.7, 0.15, hue * TAU)));
 	COLOR.rgb = color;
 }

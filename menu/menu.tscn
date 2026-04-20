@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cyoadfgal7bnv" path="res://assets/animals/meowl/idle_0.png" id="3_6nwqt"]
 [ext_resource type="StyleBox" uid="uid://cajbj8jru1phd" path="res://assets/level_button_highlight.tres" id="3_s4hbh"]
 [ext_resource type="Texture2D" uid="uid://boo2bu6isaw1a" path="res://assets/arrow.png" id="4_6fswf"]
+[ext_resource type="Texture2D" uid="uid://n17fjm16wy2k" path="res://assets/board.png" id="5_s4hbh"]
 [ext_resource type="Texture2D" uid="uid://b82orp8byty55" path="res://assets/animals/meowl/idle_1.png" id="5_svuvw"]
+[ext_resource type="Texture2D" uid="uid://504j6pbsgy5p" path="res://assets/animals/lambi/idle_0.png" id="9_bc54p"]
+[ext_resource type="Texture2D" uid="uid://0ok0iucpmjmw" path="res://assets/animals/lambi/idle_1.png" id="10_043lm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6nwqt"]
 animations = [{
@@ -16,6 +19,20 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_svuvw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iesyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bc54p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_043lm")
 }],
 "loop": true,
 "name": &"default",
@@ -65,17 +82,42 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_6fswf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial" unique_id=1298991391]
+[node name="TextureRect2" type="TextureRect" parent="Tutorial" unique_id=1632721178]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 236.0
+offset_right = 894.0
+offset_bottom = 568.0
+texture = ExtResource("5_s4hbh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/TextureRect2" unique_id=1298991391]
+clip_contents = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -27.0
-offset_right = 754.0
-offset_bottom = 27.0
+offset_left = 55.0
+offset_top = -149.0
+offset_right = 590.0
+offset_bottom = 137.0
 grow_vertical = 2
-text = "- wiggle around animals with mouse to change signal
-- try to match the signal from the left (press Z) with the right (press X)"
+theme_override_colors/default_color = Color(1, 0.8980392, 0.27450982, 1)
+theme_override_colors/font_outline_color = Color(0.19215687, 0.21568628, 0.047058824, 1)
+theme_override_constants/shadow_outline_size = 351
+theme_override_constants/outline_size = 10
+text = "Your goal is to synthesize the signal to match the input signal of each level.
+Wiggle these weird cryptid-like sounding animals - each of them stimulates the signal in its own uncanny way.
+Keep an eye on synesthetic cues for both input and the result. 
+Animals influence it with their position on the field.
+
+Use LMB to move the animals around.
+Hold \"X\" to hear the choir of all animals at once. 
+Hold \"Z\" to play the input signal.
+
+Look out for.. aliens?"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Tutorial" unique_id=1547351910]
 layout_mode = 1
@@ -90,13 +132,29 @@ scale = Vector2(0.5, 0.5)
 pivot_offset_ratio = Vector2(0.5, 0)
 texture = ExtResource("2_pbjm4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorial" unique_id=67858884]
-position = Vector2(170, 492.00003)
+[node name="Meowl" type="AnimatedSprite2D" parent="Tutorial" unique_id=67858884]
+position = Vector2(137, 488.00003)
+rotation = -0.2617994
 scale = Vector2(0.37, 0.37)
 sprite_frames = SubResource("SpriteFrames_6nwqt")
 autoplay = "default"
 
-[node name="LevelContainer" type="FlowContainer" parent="." unique_id=2126977126]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Tutorial" unique_id=155673537]
+position = Vector2(982, 189.99998)
+rotation = 0.2617994
+scale = Vector2(0.43388683, 0.43388683)
+sprite_frames = SubResource("SpriteFrames_iesyu")
+autoplay = "default"
+
+[node name="Control" type="Control" parent="." unique_id=1871162044]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelContainer" type="FlowContainer" parent="Control" unique_id=2126977126]
 custom_minimum_size = Vector2(222, 222)
 layout_mode = 0
 offset_right = 1152.0
@@ -104,4 +162,38 @@ offset_bottom = 647.0
 alignment = 1
 last_wrap_alignment = 2
 
+[node name="Button" type="Button" parent="Control" unique_id=2119494349]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -153.0
+offset_right = 281.0
+offset_bottom = -25.0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0, 1)
+theme_override_styles/normal = ExtResource("2_v6yed")
+theme_override_styles/pressed = ExtResource("3_s4hbh")
+theme_override_styles/hover = ExtResource("3_s4hbh")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/Button" unique_id=2103548180]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6fswf")
+expand_mode = 1
+flip_h = true
+
 [connection signal="pressed" from="Tutorial/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_back_button_pressed"]

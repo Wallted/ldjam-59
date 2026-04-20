@@ -6,7 +6,7 @@ extends Control
 @onready var back_button: BackButton = $BackButton
 @onready var current_fractal: Fractal = $CurrentFractal
 @onready var target_fractal: Fractal = $TargetFractal
-const UFO = preload("uid://cmtktioq7jdad")
+const UFO_SCN = preload("uid://cmtktioq7jdad")
 @onready var ufo_group: Node2D = $UfoGroup
 @onready var led: Led = $Led
 
@@ -65,7 +65,7 @@ func on_animal_dropped():
 	check_win_condition()
 	
 func ufo_cleanup():
-	var ufo = UFO.instantiate()
+	var ufo = UFO_SCN.instantiate()
 	var screen = get_viewport_rect()
 	ufo.position = screen.size + Vector2(50.0, -screen.size.y/2)
 	ufo.fly_at(Vector2(-50.0, -50.0))

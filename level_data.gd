@@ -11,6 +11,7 @@ var target_data: Array # [species, x, y]
 
 var idx: int
 var solved: bool = false
+var template_animal_idx: int = -1 
 
 func marshal() -> String:
 	var data = {
@@ -35,3 +36,4 @@ func unmarhshal(level_idx: int) -> void:
 	target_data = level_data['target_data']
 	for item in target_data:
 		item[0] = int(item[0])
+	template_animal_idx = level_data.get('new_animal', -1)

@@ -48,6 +48,10 @@ func grid_generate(dimension_x, dimension_y):
 
 	tilemap.scale = Vector2(wanted_scale, wanted_scale)
 	tilemap.position = Vector2(offset_x, offset_y)
+	
+	for _x in level.x:
+		for _y in level.y:
+			tilemap.set_cell(Vector2(_x, _y), 0, Vector2.ZERO)
 
 	texture_rect.size = grid_size_scaled * 1.1
 	texture_rect.position = tilemap.position - (texture_rect.size/2.0 - grid_size_scaled/2.0)
@@ -74,4 +78,5 @@ func grid_get_cell_coords(global_coords: Vector2) -> Vector2i:
 
 # trash
 func grid_process_cell(global_coords: Vector2):
-	tilemap.erase_cell(grid_get_cell_coords(global_coords))
+	# tilemap.erase_cell(grid_get_cell_coords(global_coords))
+	pass

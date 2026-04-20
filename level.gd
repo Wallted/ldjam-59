@@ -4,13 +4,17 @@ extends RefCounted
 var x: int
 var y: int
 
+var offset: Vector2
+
 var player_choir: Array[Chorister] = []
 var target_choir: Array[Chorister] = []
 
 func _init(level_data: LevelData) -> void:
 	x = level_data.x
 	y = level_data.y
-	
+
+	offset = level_data.offset
+
 	var player_data  = level_data.player_data
 	var target_data = level_data.target_data
 

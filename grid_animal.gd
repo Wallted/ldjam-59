@@ -44,6 +44,7 @@ func _ready() -> void:
 		_previous_point = global_position
 
 	change_animation('idle')
+	
 
 func _process(delta: float) -> void:
 	handle_mouse_drag(delta)
@@ -69,15 +70,16 @@ func handle_mouse_drag(delta: float):
 	else:
 		update_label('OOO')
 
-	if not _is_pressing or not is_in_bounds:
-		zoo_space.grid_process_cell(Vector2.INF)
-	else:
+	if _is_pressing and is_in_bounds:
 		zoo_space.grid_process_cell(global_position)
 
 func change_animation(_name: String):
 	animated_sprite.play(_name)
 	animated_sprite_2.play(_name)
 
+	 # this has nothing to do with animation, but is called everywhere needed from there
+	zoo_space.grid_process_cell(Vector2.INF)
+	
 func _on_texture_button_button_up() -> void:
 	change_animation('idle')
 	_is_pressing = false

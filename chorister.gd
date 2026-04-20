@@ -1,6 +1,10 @@
 class_name Chorister
 extends RefCounted
 
+
+const EFFECT_MAX_GRID_SIZE := 20 # (the Y coord)
+
+
 var grid_size: Vector2
 var _freq: float
 var _phase := 0.0

@@ -36,11 +36,9 @@ func change_level(button: LevelButton) -> void:
 	print(button)
 	on_level_change.emit(button.level_idx)
 
-
 func _on_texture_button_pressed() -> void:
 	tutorial.hide()
 	control.show()
-
 
 func _on_back_button_pressed() -> void:
 	tutorial.show()

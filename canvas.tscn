@@ -29,6 +29,7 @@ offset_left = 46.0
 offset_top = 271.0
 offset_right = 201.0
 offset_bottom = 335.0
+focus_mode = 0
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -48,7 +48,7 @@ func _fill_buffer(choir: Array[Chorister]) -> void:
 	
 	assert(choir.size() <= 6)
 	for chorister: Chorister in choir:
-		var grid_freq := 440.0 * pow(2.0,((chorister.grid_position.x - 12.0)/12.0))
+		var grid_freq := 440.0 * pow(2.0,((chorister.grid_position.x - 6.0)/12.0))
 		chorister.change_freq(grid_freq)
 		var playback = Species.ChoristerAudioStreamPlayer[chorister.species_id].get_stream_playback()
 		var to_fill: int = playback.get_frames_available()

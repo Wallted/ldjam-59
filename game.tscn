@@ -16,7 +16,7 @@ shader = ExtResource("4_ryrav")
 shader_parameter/zoom = 0.04
 shader_parameter/center_x = 0.0
 shader_parameter/center_y = 0.0
-shader_parameter/c_x = 0.33
+shader_parameter/c_x = 0.28
 shader_parameter/c_y = 0.48
 shader_parameter/color_phase = 0.0
 shader_parameter/color_freq = 1.0
@@ -98,6 +98,7 @@ offset_bottom = 641.0
 texture = ExtResource("12_dupa2")
 
 [node name="UfoGroup" type="Node2D" parent="." unique_id=258052472]
+z_index = 10
 
 [connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]
 [connection signal="interaction" from="TargetFractal" to="." method="_on_play_button" binds= [false]]

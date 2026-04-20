@@ -41,6 +41,7 @@ tile_size = Vector2i(256, 256)
 sources/0 = SubResource("TileSetAtlasSource_5l0d2")
 
 [node name="ZooSpace" type="Control" unique_id=1828854927]
+y_sort_enabled = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

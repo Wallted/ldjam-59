@@ -2,7 +2,7 @@ class_name Chorister
 extends RefCounted
 
 
-const EFFECT_MAX_GRID_SIZE := 20
+const EFFECT_MAX_GRID_SIZE := 13
 
 
 var grid_size: Vector2

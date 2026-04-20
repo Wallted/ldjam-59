@@ -83,6 +83,6 @@ func grid_get_cell_coords(global_coords: Vector2) -> Vector2i:
 	return tilemap.local_to_map(local_postion/tilemap.scale)
 
 # trash
-func grid_process_cell(global_coords: Vector2):
+func grid_process_cell(_global_coords: Vector2):
 	# tilemap.erase_cell(grid_get_cell_coords(global_coords))
 	pass

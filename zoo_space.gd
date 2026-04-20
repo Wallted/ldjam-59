@@ -61,7 +61,7 @@ func grid_get_local_position(global_coords: Vector2):
 func grid_get_local_position_normalized(global_coords: Vector2) -> Vector2:
 	""" Normalize each cell in grid to be between (0, 1)"""
 	var local_postion = grid_get_local_position(global_coords)
-	return local_postion / (Vector2(tilemap.tile_set.tile_size) * tilemap.scale)
+	return (local_postion / (Vector2(tilemap.tile_set.tile_size) * tilemap.scale)) + level.offset
 
 func grid_is_in_bounds(global_coords: Vector2):
 	var local_position = grid_get_local_position(global_coords)

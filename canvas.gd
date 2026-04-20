@@ -21,7 +21,6 @@ const PLAYER_FRAME = preload("uid://y4db74t88hyh")
 const PLAYER_FRAME_ACTIVE = preload("uid://bp2vwgmaj34ps")
 const TARGET_FRAME = preload("uid://bpddt2mygitv1")
 const TARGET_FRAME_ACTIVE = preload("uid://cd78hap87qmn3")
-var shortcut: Shortcut
 
 @export var is_player_fractal: bool
 
@@ -51,7 +50,6 @@ var _we_are_live: bool = false
 @onready var button: Button = $Button
 
 func _ready() -> void:
-	button.shortcut = shortcut
 	if is_player_fractal:
 		frame.texture = PLAYER_FRAME
 	else:

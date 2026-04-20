@@ -23,17 +23,6 @@ func _ready():
 	back_button.pressed.connect(_exit_level)
 	led.reset()
 	
-	target_fractal.shortcut = _create_shortcut(KEY_Z)
-	current_fractal.shortcut = _create_shortcut(KEY_X)
-	
-	
-func _create_shortcut(key) -> Shortcut:
-	var sc := Shortcut.new()
-	var ev := InputEventKey.new()
-	ev.keycode = key
-	sc.events = [ev]
-	return sc
-
 
 func load_new_level(level_data: LevelData) -> void:
 	level = Level.new(level_data)

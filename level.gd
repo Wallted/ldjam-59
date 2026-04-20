@@ -10,9 +10,11 @@ var player_choir: Array[Chorister] = []
 var target_choir: Array[Chorister] = []
 
 var idx: int
+var solved: bool
 
 func _init(level_data: LevelData) -> void:
 	idx = level_data.idx
+	solved = level_data.solved
 	x = level_data.x
 	y = level_data.y
 

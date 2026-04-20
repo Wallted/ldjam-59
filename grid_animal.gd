@@ -3,8 +3,9 @@ extends Node2D
 
 @export var zoo_space: ZooSpace
 @onready var texture_button = $TextureButton
-
+@onready var animated_sprite = $TextureButton/AnimatedSprite2D
 const const_lerp_catch_factor_velocity = 1.5
+const _chungus_scale = 0.35
 
 var _is_pressing = false
 var _lerp_factor = 0.0
@@ -15,10 +16,26 @@ signal position_changed(new_position: Vector2)
 signal animal_dropped()
 
 func _ready() -> void:
-	var res = Species.ChoristerResMap[species_id]
-	texture_button.texture_normal = res
+	var res_list = Species.ChoristerResMapPreload[species_id]
+	
+	animated_sprite.sprite_frames.add_frame('idle', res_list[0])
+	animated_sprite.sprite_frames.add_frame('idle', res_list[1])
+	animated_sprite.sprite_frames.add_frame('sing', res_list[2])
+	animated_sprite.sprite_frames.add_frame('sing', res_list[3])
+
+	texture_button.scale = Vector2(_chungus_scale, _chungus_scale)
+	texture_button.position = -texture_button.size / 2.0
+
+	var base_res = res_list[0]
+	#texture_button.texture_normal = base_res
+	var bitmap: BitMap = BitMap.new()
+	bitmap.create_from_image_alpha(base_res.get_image())
+	texture_button.texture_click_mask = bitmap
+
 	if not _previous_point:
 		_previous_point = global_position
+
+	animated_sprite.play('idle')
 
 func _process(delta: float) -> void:
 	handle_mouse_drag(delta)
@@ -45,11 +62,13 @@ func handle_mouse_drag(delta: float):
 		update_label('OOO')
 
 func _on_texture_button_button_up() -> void:
+	animated_sprite.play('idle')
 	_is_pressing = false
 	_lerp_factor = 0.0
 	animal_dropped.emit()
 
 func _on_texture_button_button_down() -> void:
+	animated_sprite.play('sing')
 	_is_pressing = true
 
 # trash

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7c34bojqhp7f"]
 
 [ext_resource type="Script" uid="uid://dx7rhev8ci3we" path="res://zoo_space.gd" id="1_bavwg"]
+[ext_resource type="Texture2D" uid="uid://dsl4xevbfipum" path="res://assets/dot_tile.png" id="2_uhnk5"]
 [ext_resource type="Shader" uid="uid://c4queg70ipfus" path="res://zoo_space.gdshader" id="4_5l0d2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhnk5"]
@@ -10,9 +11,6 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.8, 0.28627452, 0.8, 1)
-
-[sub_resource type="TileSet" id="TileSet_5l0d2"]
-tile_size = Vector2i(300, 300)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5l0d2"]
 seed = 41
@@ -32,6 +30,15 @@ shader_parameter/color_in = Color(0.89701563, 0.60972834, 2.695322e-06, 1)
 shader_parameter/edge_softness = 0.1890000089775
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uhnk5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5l0d2"]
+texture = ExtResource("2_uhnk5")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5l0d2"]
+tile_size = Vector2i(256, 256)
+sources/0 = SubResource("TileSetAtlasSource_5l0d2")
 
 [node name="ZooSpace" type="Control" unique_id=1828854927]
 layout_mode = 3
@@ -56,11 +63,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uhnk5")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=260290762]
-z_index = -1
-tile_set = SubResource("TileSet_5l0d2")
-collision_enabled = false
-
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2073129325]
 material = SubResource("ShaderMaterial_mxmsf")
 instance_shader_parameters/aspect_ratio = 1.0
@@ -74,3 +76,8 @@ offset_bottom = 57.68
 texture = SubResource("CanvasTexture_uhnk5")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=260290762]
+z_index = 5
+tile_set = SubResource("TileSet_5l0d2")
+collision_enabled = false

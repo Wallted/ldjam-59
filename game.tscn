@@ -91,6 +91,7 @@ offset_bottom = 310.0
 
 [node name="Win_audio_stream" type="AudioStreamPlayer" parent="Audio" unique_id=1046330526]
 stream = SubResource("AudioStreamOggVorbis_iotsf")
+volume_db = -5.0
 
 [node name="VolumeControl" parent="." unique_id=711890124 instance=ExtResource("6_ryrav")]
 position = Vector2(936.63, 64)

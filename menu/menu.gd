@@ -7,7 +7,7 @@ const LEVEL_BUTTON = preload("uid://gbudv1i2une2")
 
 signal on_level_change(level_number: int)  # 0=menu
 
-const LEVELS_COUNT = 5
+const LEVELS_COUNT = 6
 
 func _ready() -> void:
 	var side_length = ceil(sqrt(LEVELS_COUNT));

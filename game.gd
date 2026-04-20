@@ -34,6 +34,7 @@ func _exit_level():
 	target_fractal.stop()
 	go_to_menu.emit()
 
+
 func _on_play_button(is_pressed: bool, is_player: bool):
 	audio.who_sings = Audio.WhoSings.None
 	if is_pressed:

@@ -27,18 +27,23 @@ const TARGET_FRAME_ACTIVE = preload("uid://cd78hap87qmn3")
 
 var parameters: Array[Parameter] = [
 	
+	# 0
 	Parameter.new("shader_parameter/color_phase", Vector2(0.5, 1.5), 1.0),
 	Parameter.new("shader_parameter/color_freq", Vector2(2.5, 0.5), 1.0),
 	
-	Parameter.new("shader_parameter/c_x", Vector2(0.3, 0.5), 0.33),
-	Parameter.new("shader_parameter/c_y", Vector2(0.4, 0.6), 0.48),
+	# 1
+	Parameter.new("shader_parameter/hue_weight", Vector2(0.25, 0.75), 0.5),
+	Parameter.new("shader_parameter/zoom", Vector2(0.4, -0.1), 0.1),
 	
+	# 2
 	Parameter.new("shader_parameter/center_x", Vector2(-0.2, 0.2), 0.0),
 	Parameter.new("shader_parameter/center_y", Vector2(-0.2, 0.2), 0.0),
 	
-	Parameter.new("shader_parameter/hue_weight", Vector2(0.25, 0.75), 0.5),
-	Parameter.new("shader_parameter/zoom", Vector2(0.4, -0.1), 0.0),
+	# 3
+	Parameter.new("shader_parameter/c_x", Vector2(0.25, 0.4), 0.33),
+	Parameter.new("shader_parameter/c_y", Vector2(0.4, 0.55), 0.48),
 	
+	# 4
 	Parameter.new("shader_parameter/rotation_angle", Vector2(0.0, PI), 0.5 * PI),
 	Parameter.new("shader_parameter/fish_eye", Vector2(1.0, 0.0), 0.5),
 ]

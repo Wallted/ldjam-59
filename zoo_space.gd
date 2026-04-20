@@ -10,6 +10,7 @@ var grid_size_scaled: Vector2
 var level: Level
 var on_animal_dropped: Callable
 
+
 func _ready() -> void:
 	pass
 

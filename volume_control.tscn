@@ -2,21 +2,35 @@
 
 [ext_resource type="Script" uid="uid://dakb5vyt6a7g8" path="res://volume_control.gd" id="1_lv6wy"]
 [ext_resource type="Texture2D" uid="uid://bnlebu6wxjql" path="res://assets/speaker.png" id="2_dfm0f"]
+[ext_resource type="Texture2D" uid="uid://n17fjm16wy2k" path="res://assets/board.png" id="2_g663n"]
 
 [node name="VolumeControl" type="Node2D" unique_id=711890124]
 script = ExtResource("1_lv6wy")
 
+[node name="Backboard" type="TextureRect" parent="." unique_id=416727389]
+offset_left = -6.0
+offset_top = -1.0
+offset_right = 141.0
+offset_bottom = 59.0
+texture = ExtResource("2_g663n")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="MuteButton" type="TextureButton" parent="." unique_id=1140061242]
-offset_right = 36.0
-offset_bottom = 36.0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 46.0
 focus_mode = 0
 texture_normal = ExtResource("2_dfm0f")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="VolumeSlider" type="HSlider" parent="." unique_id=394334118]
-offset_left = 36.0
-offset_top = 6.0
-offset_right = 106.3125
-offset_bottom = 31.0
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 118.3125
+offset_bottom = 41.0
 focus_mode = 0
+metadata/_edit_use_anchors_ = true

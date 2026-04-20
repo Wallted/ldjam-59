@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwp3igcc7lv7r"]
 
 [ext_resource type="Script" uid="uid://cu6paxujgyctj" path="res://canvas.gd" id="1_75aqd"]
-[ext_resource type="Texture2D" uid="uid://bbpahtqmppeyf" path="res://assets/przycisk_ok.png" id="2_pfdkn"]
+[ext_resource type="Texture2D" uid="uid://bpddt2mygitv1" path="res://assets/target_frame.png" id="2_pfdkn"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_k4n84"]
 
@@ -18,8 +18,8 @@ offset_bottom = 256.0
 texture = SubResource("CanvasTexture_k4n84")
 
 [node name="Frame" type="Sprite2D" parent="." unique_id=779488552]
-position = Vector2(165, 157)
-scale = Vector2(0.56, 0.56)
+position = Vector2(147.58221, 169.89)
+scale = Vector2(0.6700926, 0.6700926)
 texture = ExtResource("2_pfdkn")
 
 [node name="Button" type="Button" parent="." unique_id=1212396923]

@@ -50,7 +50,6 @@ grow_vertical = 2
 script = ExtResource("1_lti8b")
 
 [node name="Tutorial" type="Control" parent="." unique_id=550203628]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,16 +95,18 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 55.0
-offset_top = -149.0
-offset_right = 590.0
-offset_bottom = 137.0
+offset_left = 50.0
+offset_top = -147.0
+offset_right = 585.0
+offset_bottom = 152.0
 grow_vertical = 2
+scale = Vector2(0.95, 0.95)
 theme_override_colors/default_color = Color(1, 0.8980392, 0.27450982, 1)
 theme_override_colors/font_outline_color = Color(0.19215687, 0.21568628, 0.047058824, 1)
 theme_override_constants/shadow_outline_size = 351
 theme_override_constants/outline_size = 10
-text = "Your goal is to synthesize a signal that matches the input signal for each level.
+text = "Your goal is to synthesize a signal that matches the input signal
+for each level.
 Wiggle these weird, cryptid-sounding animals - each one stimulates the signal in its own uncanny way.
 Observe synesthetic cues for both the input and the result.
 The animals influence the signal based on their position on the field.
@@ -115,7 +116,8 @@ Hold \"Z\" to play the input signal.
 Hold \"X\" to hear the choir of all the animals at once. 
 Headphones are recommended for the best experience.
 
-Keep an eye out for... aliens?"
+Keep an eye out for... aliens?
+"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1

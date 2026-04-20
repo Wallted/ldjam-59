@@ -4,7 +4,7 @@ extends Node2D
 @export var zoo_space: ZooSpace
 @onready var texture_button = $TextureButton
 @onready var animated_sprite = $TextureButton/AnimatedSprite2D
-const const_lerp_catch_factor_velocity = 1.5
+const const_lerp_catch_factor_velocity = 4.5
 const _chungus_scale = 0.35
 
 var _is_pressing = false

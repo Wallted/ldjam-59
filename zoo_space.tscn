@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dx7rhev8ci3we" path="res://zoo_space.gd" id="1_bavwg"]
 [ext_resource type="Texture2D" uid="uid://dsl4xevbfipum" path="res://assets/dot_tile.png" id="2_uhnk5"]
-[ext_resource type="Shader" path="res://zoo_space.gdshader" id="4_5l0d2"]
+[ext_resource type="Shader" uid="uid://c4queg70ipfus" path="res://zoo_space.gdshader" id="4_5l0d2"]
+[ext_resource type="Texture2D" uid="uid://bw26rpax7wmix" path="res://assets/dot_tile_active.png" id="4_mxmsf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhnk5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -36,9 +37,15 @@ texture = ExtResource("2_uhnk5")
 texture_region_size = Vector2i(256, 256)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0v16"]
+texture = ExtResource("4_mxmsf")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_5l0d2"]
 tile_size = Vector2i(256, 256)
 sources/0 = SubResource("TileSetAtlasSource_5l0d2")
+sources/1 = SubResource("TileSetAtlasSource_n0v16")
 
 [node name="ZooSpace" type="Control" unique_id=1828854927]
 y_sort_enabled = true

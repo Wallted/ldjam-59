@@ -3,11 +3,57 @@
 [ext_resource type="Script" uid="uid://d3y1cb6tqyug5" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://b7c34bojqhp7f" path="res://zoo_space.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dwp3igcc7lv7r" path="res://canvas.tscn" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://dvnvmr78es6q" path="res://assets/trawaseamless3.png" id="4_215e1"]
 [ext_resource type="PackedScene" uid="uid://rtb0cvf0pxp1" path="res://audio.tscn" id="4_fc0e3"]
 [ext_resource type="Shader" uid="uid://b2i0ttumm0jwq" path="res://fractal.gdshader" id="4_ryrav"]
+[ext_resource type="Texture2D" uid="uid://bniohb2eid5s0" path="res://assets/trawaseamless4kra.png" id="5_7sc4i"]
+[ext_resource type="Texture2D" uid="uid://0b8isnqc5aq5" path="res://assets/trawaseamlesskwiatkie1png.png" id="6_80cx4"]
 [ext_resource type="PackedScene" uid="uid://br7df35ubqh7p" path="res://volume_control.tscn" id="6_ryrav"]
+[ext_resource type="Texture2D" uid="uid://v6jncpa1u4oq" path="res://assets/trawaseamlesskwiatkie2kra.png" id="7_e8heu"]
 [ext_resource type="Texture2D" uid="uid://krom6crxr00m" path="res://assets/back.png" id="7_eow3j"]
 [ext_resource type="Script" uid="uid://d1loq2yrelpv0" path="res://back_button.gd" id="8_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://ct8ph1n8o8xrc" path="res://assets/trawaseamless1.png" id="9_vef74"]
+[ext_resource type="Texture2D" uid="uid://wo66yqrm4xit" path="res://assets/trawaseamless2.png" id="10_hve3p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hve3p"]
+texture = ExtResource("9_vef74")
+texture_region_size = Vector2i(300, 300)
+0:0/next_alternative_id = 5
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfdv2"]
+texture = ExtResource("10_hve3p")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvswv"]
+texture = ExtResource("4_215e1")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_boyg6"]
+texture = ExtResource("5_7sc4i")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e36ub"]
+texture = ExtResource("6_80cx4")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb5m1"]
+texture = ExtResource("7_e8heu")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mfdv2"]
+tile_size = Vector2i(300, 300)
+sources/0 = SubResource("TileSetAtlasSource_hve3p")
+sources/1 = SubResource("TileSetAtlasSource_mfdv2")
+sources/2 = SubResource("TileSetAtlasSource_rvswv")
+sources/3 = SubResource("TileSetAtlasSource_boyg6")
+sources/4 = SubResource("TileSetAtlasSource_e36ub")
+sources/5 = SubResource("TileSetAtlasSource_hb5m1")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
 shader = ExtResource("4_ryrav")
@@ -42,6 +88,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_80nbo")
 
+[node name="Background" type="TileMapLayer" parent="." unique_id=1750705461]
+scale = Vector2(0.5, 0.5)
+tile_set = SubResource("TileSet_mfdv2")
+
 [node name="ZooSpace" parent="." unique_id=1828854927 instance=ExtResource("2_e2o6t")]
 layout_mode = 1
 offset_left = 329.0
@@ -69,7 +119,7 @@ offset_bottom = 310.0
 [node name="Audio" parent="." unique_id=245871639 instance=ExtResource("4_fc0e3")]
 
 [node name="VolumeControl" parent="." unique_id=711890124 instance=ExtResource("6_ryrav")]
-position = Vector2(595, 15)
+position = Vector2(971, 41)
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=447052563]
 layout_mode = 0
@@ -80,6 +130,3 @@ offset_bottom = 139.0
 texture_normal = ExtResource("7_eow3j")
 stretch_mode = 0
 script = ExtResource("8_j5wjh")
-
-[connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]
-[connection signal="interaction" from="TargetFractal" to="." method="_on_play_button" binds= [false]]

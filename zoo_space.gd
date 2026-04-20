@@ -4,7 +4,7 @@ extends Control
 const GRID_ANIMAL = preload("res://grid_animal.tscn")
 
 @onready var tilemap = $TileMapLayer
-
+@onready var texture_rect = $TextureRect
 var grid_size_scaled: Vector2
 
 var level: Level
@@ -48,9 +48,10 @@ func grid_generate(dimension_x, dimension_y):
 
 	tilemap.scale = Vector2(wanted_scale, wanted_scale)
 	tilemap.position = Vector2(offset_x, offset_y)
-	for x in dimension_x:
-		for y in dimension_y:
-			tilemap.set_cell(Vector2(x, y), 0, Vector2i(0, 0))
+
+	texture_rect.size = grid_size_scaled * 1.1
+	texture_rect.position = tilemap.position - (texture_rect.size/2.0 - grid_size_scaled/2.0)
+	texture_rect.set_instance_shader_parameter('aspect_ratio', float(level.x)/float(level.y))
 
 func grid_get_local_position(global_coords: Vector2):
 	""" Posision relative to TileMap """

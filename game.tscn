@@ -55,6 +55,9 @@ sources/3 = SubResource("TileSetAtlasSource_boyg6")
 sources/4 = SubResource("TileSetAtlasSource_e36ub")
 sources/5 = SubResource("TileSetAtlasSource_hb5m1")
 
+[ext_resource type="PackedScene" uid="uid://ckyt7nool2jwj" path="res://led.tscn" id="9_vef74"]
+[ext_resource type="Texture2D" uid="uid://dmmrb272adx8f" path="res://assets/diode.png" id="10_hve3p"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
 shader = ExtResource("4_ryrav")
 shader_parameter/zoom = 0.04
@@ -136,6 +139,14 @@ offset_bottom = 139.0
 texture_normal = ExtResource("7_eow3j")
 stretch_mode = 0
 script = ExtResource("8_j5wjh")
+
+[node name="Led" parent="." unique_id=1528761497 instance=ExtResource("9_vef74")]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 579.0
+offset_right = 839.0
+offset_bottom = 643.0
+texture = ExtResource("10_hve3p")
 
 [connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]
 [connection signal="interaction" from="TargetFractal" to="." method="_on_play_button" binds= [false]]

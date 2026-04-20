@@ -2,11 +2,14 @@
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
 resource_name = "Compressor"
+threshold = -2.0
+ratio = 48.0
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_g28q7"]
 resource_name = "Compressor"
-threshold = -2.0
+threshold = -13.7
 ratio = 48.0
+gain = 20.0
 
 [sub_resource type="AudioEffectChorus" id="AudioEffectChorus_j3pel"]
 resource_name = "Chorus"
@@ -20,9 +23,19 @@ voice/2/rate_hz = 1.0
 voice/2/cutoff_hz = 1947.0
 voice/2/pan = -0.65
 
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_cenje"]
+resource_name = "Reverb"
+spread = 0.44
+hipass = 0.45
+dry = 0.5
+wet = 1.0
+
 [sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_n8wo2"]
 resource_name = "Distortion"
 mode = 3
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_n8wo2"]
+resource_name = "Phaser"
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_n8wo2"]
 resource_name = "Compressor"
@@ -101,6 +114,7 @@ cutoff_hz = 3665.0
 
 [sub_resource type="AudioEffectChorus" id="AudioEffectChorus_5t1r3"]
 resource_name = "Chorus"
+voice/1/rate_hz = 4.1
 
 [sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_j3pel"]
 resource_name = "HardLimiter"
@@ -128,6 +142,7 @@ depth = 0.8
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_dqt2m"]
 resource_name = "Compressor"
 threshold = -5.0
+ratio = 48.0
 gain = -2.0
 
 [sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
@@ -138,19 +153,25 @@ feedback_active = true
 feedback_delay_ms = 426.0
 feedback_level_db = -5.2
 
-[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_n8wo2"]
-resource_name = "Phaser"
-range_min_hz = 291.408
-range_max_hz = 2034.683
-rate_hz = 0.603
-depth = 0.6
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_5t1r3"]
+resource_name = "Reverb"
+room_size = 0.1
+damping = 1.0
+spread = 0.68
+dry = 0.6
+wet = 0.3
 
-[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_5t1r3"]
-resource_name = "Phaser"
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_5t1r3"]
+resource_name = "EQ"
+band_db/32_hz = -60.0
+band_db/3200_hz = -60.0
+band_db/10000_hz = -60.0
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_7kkex"]
 resource_name = "Compressor"
 threshold = -6.0
+ratio = 48.0
+gain = 2.4
 
 [sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_cenje"]
 resource_name = "Phaser"
@@ -163,26 +184,30 @@ dry = 0.5
 wet = 1.0
 
 [resource]
-bus/0/volume_db = -1.3592625
+bus/0/volume_db = -1.3259335
 bus/0/effect/0/effect = SubResource("AudioEffectCompressor_j3pel")
 bus/0/effect/0/enabled = true
 bus/1/name = &"Choripracter"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -0.010509491
+bus/1/volume_db = -0.046060562
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectCompressor_g28q7")
 bus/1/effect/0/enabled = true
 bus/1/effect/1/effect = SubResource("AudioEffectChorus_j3pel")
 bus/1/effect/1/enabled = true
-bus/1/effect/2/effect = SubResource("AudioEffectDistortion_n8wo2")
+bus/1/effect/2/effect = SubResource("AudioEffectReverb_cenje")
 bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectDistortion_n8wo2")
+bus/1/effect/3/enabled = true
+bus/1/effect/4/effect = SubResource("AudioEffectPhaser_n8wo2")
+bus/1/effect/4/enabled = true
 bus/2/name = &"Sinoceros"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = -0.0038433075
+bus/2/volume_db = -0.0438385
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectCompressor_n8wo2")
 bus/2/effect/0/enabled = true
@@ -220,7 +245,7 @@ bus/4/name = &"Oggazele"
 bus/4/solo = false
 bus/4/mute = false
 bus/4/bypass_fx = false
-bus/4/volume_db = 0.002822876
+bus/4/volume_db = -0.0016212463
 bus/4/send = &"Master"
 bus/4/effect/0/effect = SubResource("AudioEffectHardLimiter_j3pel")
 bus/4/effect/0/enabled = true
@@ -240,10 +265,10 @@ bus/5/effect/0/effect = SubResource("AudioEffectCompressor_dqt2m")
 bus/5/effect/0/enabled = true
 bus/5/effect/1/effect = SubResource("AudioEffectDelay_j3pel")
 bus/5/effect/1/enabled = true
-bus/5/effect/2/effect = SubResource("AudioEffectPhaser_n8wo2")
-bus/5/effect/2/enabled = false
-bus/5/effect/3/effect = SubResource("AudioEffectPhaser_5t1r3")
-bus/5/effect/3/enabled = false
+bus/5/effect/2/effect = SubResource("AudioEffectReverb_5t1r3")
+bus/5/effect/2/enabled = true
+bus/5/effect/3/effect = SubResource("AudioEffectEQ_5t1r3")
+bus/5/effect/3/enabled = true
 bus/6/name = &"Tigereverber"
 bus/6/solo = false
 bus/6/mute = false

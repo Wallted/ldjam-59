@@ -29,6 +29,7 @@ func load_new_level(level_data: LevelData) -> void:
 	current_fractal.start(level)
 	target_fractal.start(level)
 	zoo_space.restart()
+	led.reset()
 	if level_data.solved:
 		led.enable()
 	led.disable()

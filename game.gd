@@ -18,6 +18,7 @@ signal win()
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	zoo_space.on_animal_dropped = check_win_condition
 	back_button.pressed.connect(_exit_level)
 	led.reset()
 
@@ -31,7 +32,6 @@ func load_new_level(level_data: LevelData) -> void:
 	target_fractal.start(level)
 	zoo_space.restart()
 	led.reset()
-	check_win_condition()
 
 	for x in 8:
 		for y in 5:
@@ -50,8 +50,6 @@ func _on_play_button(is_pressed: bool, is_player: bool):
 	audio.who_sings = Audio.WhoSings.None
 	if is_pressed:
 		audio.who_sings = Audio.WhoSings.Player if is_player else Audio.WhoSings.Target
-	if is_pressed and is_player:
-		check_win_condition()
 		
 func ufo_cleanup():
 	var ufo = UFO.instantiate()

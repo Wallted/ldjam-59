@@ -12,8 +12,8 @@ enum State {
 var state: State = State.OFF;
 
 
-func _set_state(state: State):
-	self.state = state
+func _set_state(_state: State):
+	self.state = _state
 	self.texture = {
 		State.OFF: DIODE,
 		State.DIM: DIODE_GREEN,

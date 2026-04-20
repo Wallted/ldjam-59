@@ -32,7 +32,7 @@ func _ready() -> void:
 
 	texture_button.scale = Vector2(_chungus_scale, _chungus_scale)
 	texture_button.position = -texture_button.size / 2.0
-	
+
 	var base_res = res_list[0]
 	#texture_button.texture_normal = base_res
 	var bitmap: BitMap = BitMap.new()
@@ -42,7 +42,7 @@ func _ready() -> void:
 
 	if not _previous_point:
 		_previous_point = global_position
-	
+
 	change_animation('idle')
 
 func _process(delta: float) -> void:

@@ -2,7 +2,7 @@ class_name LevelButton
 extends Button
 
 @onready var completion_mark: TextureRect = $CompletionMark
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite: AnimatedSprite2D = $Control/AnimatedSprite2D
 var level_idx: int = 0
 var is_completed: bool = false
 

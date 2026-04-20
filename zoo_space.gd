@@ -28,7 +28,7 @@ func spawn_animals(choristers: Array[Chorister]):
 		var grid_animal = GRID_ANIMAL.instantiate()
 		grid_animal.zoo_space = self
 		grid_animal.species_id = chorister.species_id
-		grid_animal.position = tilemap.position + (chorister.grid_position * tilemap.scale * Vector2(tilemap.tile_set.tile_size))
+		grid_animal.position = tilemap.position + ((chorister.grid_position-level.offset) * tilemap.scale * Vector2(tilemap.tile_set.tile_size))
 		grid_animal.position_changed.connect(chorister._on_grid_position_changed)
 		add_child(grid_animal)
 
@@ -48,6 +48,10 @@ func grid_generate(dimension_x, dimension_y):
 
 	tilemap.scale = Vector2(wanted_scale, wanted_scale)
 	tilemap.position = Vector2(offset_x, offset_y)
+	
+	for _x in level.x:
+		for _y in level.y:
+			tilemap.set_cell(Vector2(_x, _y), 0, Vector2.ZERO)
 
 	texture_rect.size = grid_size_scaled * 1.1
 	texture_rect.position = tilemap.position - (texture_rect.size/2.0 - grid_size_scaled/2.0)
@@ -74,4 +78,5 @@ func grid_get_cell_coords(global_coords: Vector2) -> Vector2i:
 
 # trash
 func grid_process_cell(global_coords: Vector2):
-	tilemap.erase_cell(grid_get_cell_coords(global_coords))
+	# tilemap.erase_cell(grid_get_cell_coords(global_coords))
+	pass

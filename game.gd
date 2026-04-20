@@ -27,7 +27,7 @@ func load_new_level(level_data: LevelData) -> void:
 
 	for x in 8:
 		for y in 5:
-			background.set_cell(Vector2(x, y), rng.randi_range(0, 3), Vector2i(0, 0))
+			background.set_cell(Vector2(x, y), rng.randi_range(0, 2), Vector2i(0, 0))
 
 func _exit_level():
 	current_fractal.stop()

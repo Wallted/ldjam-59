@@ -135,3 +135,6 @@ texture = ExtResource("12_dupa2")
 
 [node name="UfoGroup" type="Node2D" parent="." unique_id=258052472]
 z_index = 10
+
+[connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]
+[connection signal="interaction" from="TargetFractal" to="." method="_on_play_button" binds= [false]]

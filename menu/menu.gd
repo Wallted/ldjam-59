@@ -26,6 +26,9 @@ func update_i_na_chate(level_idx: int):
 	var level_button = level_container.get_child(level_idx - 1) as LevelButton
 	level_button.mark_complete()
 
+func is_level_completed(level_idx: int):
+	return level_container.get_child(level_idx - 1).is_completed
+
 func change_level(button: LevelButton) -> void:
 	print(button)
 	on_level_change.emit(button.level_idx)

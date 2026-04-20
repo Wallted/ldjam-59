@@ -34,4 +34,6 @@ func set_level(level_idx: int) -> void:
 	else:
 		menu.hide()
 		game.show()
-		game.load_new_level(get_level_data(level_idx))
+		var level_data = get_level_data(level_idx)
+		level_data.solved = menu.is_level_completed(level_idx)
+		game.load_new_level(level_data)

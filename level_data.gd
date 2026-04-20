@@ -10,6 +10,7 @@ var player_data: Array # [species, x, y]
 var target_data: Array # [species, x, y]
 
 var idx: int
+var solved: bool = false
 
 func marshal() -> String:
 	var data = {

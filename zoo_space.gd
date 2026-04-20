@@ -9,7 +9,7 @@ var grid_size_scaled: Vector2
 
 var level: Level
 var on_animal_dropped: Callable
-
+var on_animal_dragged: Callable
 
 func _ready() -> void:
 	pass
@@ -26,13 +26,16 @@ func clear():
 	tilemap.clear()
 
 func spawn_animals(choristers: Array[Chorister]):
-	for chorister in choristers:
+	for chorister_idx in choristers.size():
+		var chorister = choristers[chorister_idx]
 		var grid_animal = GRID_ANIMAL.instantiate() as GridAnimal
+		grid_animal.chorister_idx = chorister_idx
 		grid_animal.zoo_space = self
 		grid_animal.species_id = chorister.species_id
 		grid_animal.position = tilemap.position + ((chorister.grid_position-level.offset) * tilemap.scale * Vector2(tilemap.tile_set.tile_size))
 		grid_animal.position_changed.connect(chorister._on_grid_position_changed)
 		grid_animal.animal_dropped.connect(on_animal_dropped)
+		grid_animal.animal_dragged.connect(on_animal_dragged)
 		add_child(grid_animal)
 
 func grid_generate(dimension_x, dimension_y):

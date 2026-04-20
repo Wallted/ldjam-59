@@ -9,6 +9,7 @@ script = ExtResource("1_lv6wy")
 [node name="MuteButton" type="TextureButton" parent="." unique_id=1140061242]
 offset_right = 36.0
 offset_bottom = 36.0
+focus_mode = 0
 texture_normal = ExtResource("2_dfm0f")
 ignore_texture_size = true
 stretch_mode = 0
@@ -18,3 +19,4 @@ offset_left = 36.0
 offset_top = 6.0
 offset_right = 106.3125
 offset_bottom = 31.0
+focus_mode = 0

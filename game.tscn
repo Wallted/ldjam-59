@@ -85,6 +85,7 @@ offset_left = 55.0
 offset_top = 47.0
 offset_right = 240.0
 offset_bottom = 139.0
+focus_mode = 0
 texture_normal = ExtResource("7_eow3j")
 stretch_mode = 0
 script = ExtResource("8_j5wjh")

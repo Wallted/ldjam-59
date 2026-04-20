@@ -50,7 +50,6 @@ sprite_frames = SubResource("SpriteFrames_erjvo")
 animation = &"idle"
 
 [node name="Label" type="Label" parent="." unique_id=1701436103]
-visible = false
 offset_left = 32.0
 offset_top = -88.0
 offset_right = 72.0

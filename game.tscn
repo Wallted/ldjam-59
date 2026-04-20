@@ -15,10 +15,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
 shader = ExtResource("4_ryrav")
-shader_parameter/zoom = 0.04
+shader_parameter/zoom = 0.0
 shader_parameter/center_x = 0.0
 shader_parameter/center_y = 0.0
-shader_parameter/c_x = 0.28
+shader_parameter/c_x = 0.33
 shader_parameter/c_y = 0.48
 shader_parameter/color_phase = 0.0
 shader_parameter/color_freq = 1.0

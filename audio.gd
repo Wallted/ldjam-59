@@ -9,6 +9,7 @@ enum WhoSings{
 	None,
 	Target,
 	Player,
+	Solo,
 }
 
 var who_sings := WhoSings.None
@@ -18,6 +19,9 @@ var audio_stream_player_table: Array[AudioStreamPlayer] = []
 @onready var _audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var level: Level
+
+var _solo_chorister: Array[Chorister] = [] # up to a length of one xD
+
 
 func _ready() -> void:
 	_audio_stream_player.stream.mix_rate = config_sample_hz
@@ -32,6 +36,12 @@ func _process(_delta: float) -> void:
 			_fill_buffer(level.target_choir)
 		WhoSings.Player:
 			_fill_buffer(level.player_choir)
+		WhoSings.Solo:
+			_fill_buffer(_solo_chorister)
+
+
+func set_solo_chorister(index: int):
+	_solo_chorister = [level.player_choir[index]]
 
 
 func _fill_buffer(choir: Array[Chorister]) -> void:

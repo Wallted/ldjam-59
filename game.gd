@@ -2,6 +2,7 @@ class_name Game
 extends Control
 
 @onready var audio: Audio = $Audio
+@onready var win_stream: AudioStreamPlayer = $Audio/Win_audio_stream
 @onready var zoo_space: ZooSpace = $ZooSpace
 @onready var back_button: BackButton = $BackButton
 @onready var current_fractal: Fractal = $CurrentFractal
@@ -69,6 +70,7 @@ func on_animal_dropped():
 func ufo_deploy():
 	var ufo = UFO_SCN.instantiate()
 	var screen = get_viewport_rect()
+	win_stream.play(0.0)
 	ufo.position = screen.size + Vector2(50.0, -screen.size.y/2)
 	ufo.fly_at(Vector2(-50.0, -50.0))
 	ufo_group.add_child(ufo)

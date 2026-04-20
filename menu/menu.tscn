@@ -105,15 +105,15 @@ theme_override_colors/default_color = Color(1, 0.8980392, 0.27450982, 1)
 theme_override_colors/font_outline_color = Color(0.19215687, 0.21568628, 0.047058824, 1)
 theme_override_constants/shadow_outline_size = 351
 theme_override_constants/outline_size = 10
-text = "Your goal is to synthesize a signal that matches the input signal
-for each level.
+text = "Your goal is to synthesize a signal that matches the input signal for each level.
 Wiggle these weird, cryptid-sounding animals - each one stimulates the signal in its own uncanny way.
 Observe synesthetic cues for both the input and the result.
 The animals influence the signal based on their position on the field.
 
 Use LMB to move the animals around.
-Hold \"X\" to hear the choir of all the animals at once. 
 Hold \"Z\" to play the input signal.
+Hold \"X\" to hear the choir of all the animals at once. 
+Headphones are recommended for the best experience.
 
 Keep an eye out for... aliens?"
 fit_content = true

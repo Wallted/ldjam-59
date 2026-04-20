@@ -86,13 +86,11 @@ func check_win_condition():
 		):
 			is_solved = false;
 	if is_solved:
-		print('glorp')
 		led.enable()
 		if not level.solved:
 			ufo_deploy()
 			level.solved = true
 		win.emit(level.idx)
 	else:
-		print("glorpn't")
 		led.disable()
 	return is_solved;

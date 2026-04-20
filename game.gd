@@ -18,7 +18,8 @@ signal win()
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	zoo_space.on_animal_dropped = check_win_condition
+	zoo_space.on_animal_dropped = on_animal_dropped
+	zoo_space.on_animal_dragged = on_animal_dragged
 	back_button.pressed.connect(_exit_level)
 	led.reset()
 
@@ -53,7 +54,16 @@ func _on_play_button(is_pressed: bool, is_player: bool):
 	if is_pressed:
 		audio.who_sings = Audio.WhoSings.Player if is_player else Audio.WhoSings.Target
 
+func on_animal_dragged(chorister_idx):
+	if audio.who_sings == Audio.WhoSings.None:
+		audio.who_sings = Audio.WhoSings.Solo
+		audio.set_solo_chorister(chorister_idx)
 
+func on_animal_dropped():
+	if audio.who_sings == Audio.WhoSings.Solo:
+		audio.who_sings = Audio.WhoSings.None
+	check_win_condition()
+	
 func ufo_cleanup():
 	var ufo = UFO.instantiate()
 	var screen = get_viewport_rect()

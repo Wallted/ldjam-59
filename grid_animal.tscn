@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dy070i57b2t76"]
+
+[ext_resource type="Script" uid="uid://rnloc0u2j2sq" path="res://grid_animal.gd" id="1_r8eqj"]
+
+[node name="GridAnimal" type="Node2D" unique_id=1073071156]
+z_index = 10
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_r8eqj")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=242882356]
+offset_left = -64.0
+offset_top = -68.0
+offset_right = 64.0
+offset_bottom = 60.0
+focus_mode = 0
+keep_pressed_outside = true
+
+[node name="Label" type="Label" parent="." unique_id=1701436103]
+offset_left = 32.0
+offset_top = -88.0
+offset_right = 72.0
+offset_bottom = -65.0
+theme_override_colors/font_color = Color(0.9403621, 3.4172833e-06, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 32
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]

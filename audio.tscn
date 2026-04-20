@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://rtb0cvf0pxp1"]
+
+[ext_resource type="Script" uid="uid://cwn11r7we314k" path="res://audio.gd" id="1_qc0l7"]
+[ext_resource type="AudioStream" uid="uid://d1n6lwxwusg4k" path="res://new_audio_stream_generator.tres" id="2_q45hi"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_qc0l7"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_q45hi"]
+buffer_length = 0.1
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_ybffx"]
+buffer_length = 0.1
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_p423y"]
+buffer_length = 0.1
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_8w7rj"]
+buffer_length = 0.1
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_74vr2"]
+buffer_length = 0.1
+
+[node name="Audio" type="Node" unique_id=245871639]
+script = ExtResource("1_qc0l7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1142669576]
+stream = SubResource("AudioStreamGenerator_qc0l7")
+volume_db = -36.0
+autoplay = true
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=1265999224]
+stream = ExtResource("2_q45hi")
+autoplay = true
+bus = &"Choripracter"
+playback_type = 1
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=348801532]
+stream = SubResource("AudioStreamGenerator_q45hi")
+autoplay = true
+bus = &"Sinoceros"
+playback_type = 1
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=875342545]
+stream = SubResource("AudioStreamGenerator_ybffx")
+autoplay = true
+bus = &"Qudratoppator"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=1682209535]
+stream = SubResource("AudioStreamGenerator_p423y")
+autoplay = true
+bus = &"Oggazele"
+playback_type = 1
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=112368598]
+stream = SubResource("AudioStreamGenerator_8w7rj")
+autoplay = true
+bus = &"Delailer"
+playback_type = 1
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=183567944]
+stream = SubResource("AudioStreamGenerator_74vr2")
+autoplay = true
+bus = &"Tigereverber"

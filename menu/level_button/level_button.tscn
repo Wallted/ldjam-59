@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://gbudv1i2une2"]
+
+[ext_resource type="StyleBox" uid="uid://d1gngm1geoatt" path="res://assets/level_button.tres" id="1_pbqjf"]
+[ext_resource type="Script" uid="uid://cu3bv20eod1gs" path="res://menu/level_button/level_button.gd" id="2_or0e7"]
+[ext_resource type="Texture2D" uid="uid://bwj5y360ujs13" path="res://assets/ufo1.png" id="3_oc4oc"]
+
+[node name="LevelButton" type="Button" unique_id=582310369]
+offset_right = 62.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("1_pbqjf")
+script = ExtResource("2_or0e7")
+
+[node name="CompletionMark" type="TextureRect" parent="." unique_id=1432984207]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -139.0
+offset_top = -134.0
+offset_right = 15.02771
+offset_bottom = 20.027718
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.25830874
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_oc4oc")
+expand_mode = 1

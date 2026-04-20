@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://b7c34bojqhp7f"]
+
+[ext_resource type="Script" uid="uid://dx7rhev8ci3we" path="res://zoo_space.gd" id="1_bavwg"]
+[ext_resource type="Texture2D" uid="uid://dsl4xevbfipum" path="res://assets/dot_tile.png" id="2_uhnk5"]
+[ext_resource type="Shader" path="res://zoo_space.gdshader" id="4_5l0d2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhnk5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.28627452, 0.8, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5l0d2"]
+seed = 41
+frequency = 0.0001
+offset = Vector3(260.87, 0, 0)
+fractal_octaves = 10
+fractal_lacunarity = 2.295
+fractal_gain = 0.95
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5l0d2"]
+noise = SubResource("FastNoiseLite_5l0d2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxmsf"]
+shader = ExtResource("4_5l0d2")
+shader_parameter/NOISE_PATTERN = SubResource("NoiseTexture2D_5l0d2")
+shader_parameter/color_in = Color(0.89701563, 0.60972834, 2.695322e-06, 1)
+shader_parameter/edge_softness = 0.1890000089775
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uhnk5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5l0d2"]
+texture = ExtResource("2_uhnk5")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5l0d2"]
+tile_size = Vector2i(256, 256)
+sources/0 = SubResource("TileSetAtlasSource_5l0d2")
+
+[node name="ZooSpace" type="Control" unique_id=1828854927]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 345.0
+offset_top = 237.0
+offset_right = -346.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bavwg")
+
+[node name="Panel" type="Panel" parent="." unique_id=1929547173]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uhnk5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2073129325]
+material = SubResource("ShaderMaterial_mxmsf")
+instance_shader_parameters/aspect_ratio = 1.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.004
+anchor_bottom = 0.004
+offset_top = -1.32
+offset_right = 87.0
+offset_bottom = 57.68
+texture = SubResource("CanvasTexture_uhnk5")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=260290762]
+z_index = 5
+tile_set = SubResource("TileSet_5l0d2")
+collision_enabled = false

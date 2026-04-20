@@ -37,7 +37,7 @@ var parameters: Array[Parameter] = [
 	Parameter.new("shader_parameter/zoom", Vector2(0.4, -0.1), 0.0),
 	
 	Parameter.new("shader_parameter/rotation_angle", Vector2(0.0, PI), 0.5 * PI),
-	Parameter.new("shader_parameter/fish_eye", Vector2(1.0, 0.0), 0.0),
+	Parameter.new("shader_parameter/fish_eye", Vector2(1.0, 0.0), 0.5),
 ]
 
 var _level: Level

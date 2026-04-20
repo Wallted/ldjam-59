@@ -24,7 +24,7 @@ var ChoristerResMap = {
 	ChoristerEnum.SINOCEROS:  "wabbit",
 	ChoristerEnum.QUDRATOPPATOR:  "deew",
 	ChoristerEnum.OGGAZELE: "lambi",
-	ChoristerEnum.DELAILER:  null,
+	ChoristerEnum.DELAILER:  "beer",
 	ChoristerEnum.TIGEREVERBER:  null,
 }
 

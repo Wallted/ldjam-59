@@ -7,8 +7,8 @@ extends Control
 @onready var back_button: BackButton = $BackButton
 @onready var current_fractal: Fractal = $CurrentFractal
 @onready var target_fractal: Fractal = $TargetFractal
-const UFO_SCN = preload("uid://cmtktioq7jdad")
 @onready var ufo_group: Node2D = $UfoGroup
+@onready var ufo_cruise_control: UfoCruiseControl = $UfoGroup/UfoPath/UfoCruiseControl
 @onready var led: Led = $Led
 
 var level: Level
@@ -39,9 +39,6 @@ func load_new_level(level_data: LevelData) -> void:
 func _exit_level():
 	current_fractal.stop()
 	target_fractal.stop()
-	for ufo in ufo_group.get_children():
-		ufo_group.remove_child(ufo)
-		ufo.queue_free()
 	go_to_menu.emit()
 
 
@@ -68,13 +65,9 @@ func on_animal_dropped():
 	check_win_condition()
 	
 func ufo_deploy():
-	var ufo = UFO_SCN.instantiate()
-	var screen = get_viewport_rect()
 	win_stream.play(0.0)
-	ufo.position = screen.size + Vector2(50.0, -screen.size.y/2)
-	ufo.fly_at(Vector2(-50.0, -50.0))
-	ufo_group.add_child(ufo)
-
+	ufo_cruise_control.restart()
+	
 func check_win_condition():
 	var is_solved = true;
 	var player_choir = zoo_space.level.player_choir;

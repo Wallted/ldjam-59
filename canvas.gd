@@ -23,12 +23,16 @@ const FRAME_BUTTON_PRESSED = preload("uid://dcn40m7ndrwwc")
 
 
 var parameters: Array[Parameter] = [
+	
 	Parameter.new("shader_parameter/c_x", Vector2(0.3, 0.5), 0.33),
 	Parameter.new("shader_parameter/c_y", Vector2(0.4, 0.6), 0.48),
+	
 	Parameter.new("shader_parameter/color_phase", Vector2(0.0, 1.0), 0.0),
-	Parameter.new("shader_parameter/color_freq", Vector2(0.5, 2.5), 1.0),
+	Parameter.new("shader_parameter/color_freq", Vector2(2.5, 0.5), 1.0),
+	
 	Parameter.new("shader_parameter/center_x", Vector2(-0.2, 0.2), 0.0),
 	Parameter.new("shader_parameter/center_y", Vector2(-0.2, 0.2), 0.0),
+	
 	Parameter.new("shader_parameter/zoom", Vector2(-0.2, 0.2), 0.05),
 ]
 
@@ -60,8 +64,8 @@ func _refresh():
 		if chorister.species_id * 2 + 1 < parameters.size():
 			var param_a := parameters[chorister.species_id * 2]
 			var param_b := parameters[chorister.species_id * 2 + 1]
-			var value_a := lerpf(param_a.interval.x, param_a.interval.y, inverse_lerp(0.0, _level.x, chorister.grid_position.x))
-			var value_b := lerpf(param_b.interval.x, param_b.interval.y, inverse_lerp(0.0, _level.y, chorister.grid_position.y))
+			var value_a := lerpf(param_a.interval.x, param_a.interval.y, inverse_lerp(0.0, chorister.EFFECT_MAX_GRID_SIZE, chorister.grid_position.x))
+			var value_b := lerpf(param_b.interval.x, param_b.interval.y, inverse_lerp(0.0, chorister.EFFECT_MAX_GRID_SIZE, chorister.grid_position.y))
 			material.set(param_a.shader_param, value_a)
 			material.set(param_b.shader_param, value_b)
 

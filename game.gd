@@ -22,7 +22,7 @@ func _ready():
 	zoo_space.on_animal_dragged = on_animal_dragged
 	back_button.pressed.connect(_exit_level)
 	led.reset()
-
+	
 
 func load_new_level(level_data: LevelData) -> void:
 	level = Level.new(level_data)
@@ -51,9 +51,15 @@ func _exit_level():
 
 func _on_play_button(is_pressed: bool, is_player: bool):
 	audio.who_sings = Audio.WhoSings.None
-	if is_pressed:
-		audio.who_sings = Audio.WhoSings.Player if is_player else Audio.WhoSings.Target
-
+	if not is_pressed:
+		return
+	if is_player:
+		audio.who_sings = Audio.WhoSings.Player
+		target_fractal.unpress_button()
+	else:
+		audio.who_sings = Audio.WhoSings.Target
+		current_fractal.unpress_button()
+		
 func on_animal_dragged(chorister_idx):
 	if audio.who_sings == Audio.WhoSings.None:
 		audio.who_sings = Audio.WhoSings.Solo

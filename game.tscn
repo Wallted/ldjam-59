@@ -141,10 +141,10 @@ script = ExtResource("8_j5wjh")
 
 [node name="Led" parent="." unique_id=1528761497 instance=ExtResource("11_dupa1")]
 layout_mode = 0
-offset_left = 775.0
-offset_top = 579.0
-offset_right = 839.0
-offset_bottom = 643.0
+offset_left = 822.0
+offset_top = 577.0
+offset_right = 886.0
+offset_bottom = 641.0
 texture = ExtResource("12_dupa2")
 
 [node name="UfoGroup" type="Node2D" parent="." unique_id=258052472]

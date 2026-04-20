@@ -17,7 +17,10 @@ signal interaction(is_pressed: bool)
 
 const FRAME_BUTTON_RELEASED = preload("uid://bbpahtqmppeyf")
 const FRAME_BUTTON_PRESSED = preload("uid://dcn40m7ndrwwc")
-
+const PLAYER_FRAME = preload("uid://y4db74t88hyh")
+const PLAYER_FRAME_ACTIVE = preload("uid://bp2vwgmaj34ps")
+const TARGET_FRAME = preload("uid://bpddt2mygitv1")
+const TARGET_FRAME_ACTIVE = preload("uid://cd78hap87qmn3")
 
 @export var is_player_fractal: bool
 
@@ -44,11 +47,31 @@ var _level: Level
 var _we_are_live: bool = false
 
 @onready var frame: Sprite2D = $Frame
+@onready var button: Button = $Button
 
+func _ready() -> void:
+	if is_player_fractal:
+		frame.texture = PLAYER_FRAME
+	else:
+		frame.texture = TARGET_FRAME
 
 func _process(_delta):
 	if _we_are_live and is_player_fractal:
 		_refresh()
+		
+func _unhandled_input(event: InputEvent):
+	if _level == null:
+		return
+	if is_player_fractal:
+		if event.is_action_pressed("player_choir"):
+			_set_button_pressed(true)
+		if event.is_action_released("player_choir"):
+			_set_button_pressed(false)
+	else:
+		if event.is_action_pressed("target_choir"):
+			_set_button_pressed(true)
+		if event.is_action_released("target_choir"):
+			_set_button_pressed(false)
 
 
 func start(level: Level):
@@ -61,6 +84,7 @@ func start(level: Level):
 
 func stop():
 	_we_are_live = false
+	_level = null
 
 
 func _refresh():
@@ -75,10 +99,28 @@ func _refresh():
 
 
 func _on_button_button_down():
-	interaction.emit(true)
-	frame.texture = FRAME_BUTTON_PRESSED
+	_set_button_pressed(true)
 
 
 func _on_button_button_up():
-	interaction.emit(false)
-	frame.texture = FRAME_BUTTON_RELEASED
+	_set_button_pressed(false)
+
+func _set_texture(is_button_pressed: bool):
+	frame.texture = {
+		true: {
+			false: PLAYER_FRAME,
+			true: PLAYER_FRAME_ACTIVE,
+		},
+		false: {
+			false: TARGET_FRAME,
+			true: TARGET_FRAME_ACTIVE,
+		},
+	}[is_player_fractal][is_button_pressed]
+
+func _set_button_pressed(value: bool):
+	interaction.emit(value)
+	_set_texture(value)
+
+func unpress_button():
+	var is_button_pressed = false
+	_set_texture(is_button_pressed)

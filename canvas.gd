@@ -107,9 +107,7 @@ func _on_button_button_down():
 func _on_button_button_up():
 	_set_button_pressed(false)
 
-
-func _set_button_pressed(value: bool):
-	interaction.emit(value)
+func _set_texture(is_button_pressed: bool):
 	frame.texture = {
 		true: {
 			false: PLAYER_FRAME,
@@ -119,4 +117,12 @@ func _set_button_pressed(value: bool):
 			false: TARGET_FRAME,
 			true: TARGET_FRAME_ACTIVE,
 		},
-	}[is_player_fractal][value]
+	}[is_player_fractal][is_button_pressed]
+
+func _set_button_pressed(value: bool):
+	interaction.emit(value)
+	_set_texture(value)
+
+func unpress_button():
+	var is_button_pressed = false
+	_set_texture(is_button_pressed)

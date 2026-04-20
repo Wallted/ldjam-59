@@ -44,7 +44,6 @@ func _ready() -> void:
 		_previous_point = global_position
 
 	change_animation('idle')
-	
 
 func _process(delta: float) -> void:
 	handle_mouse_drag(delta)

@@ -54,10 +54,10 @@ func _on_play_button(is_pressed: bool, is_player: bool):
 	if is_pressed:
 		audio.who_sings = Audio.WhoSings.Player if is_player else Audio.WhoSings.Target
 
-func on_animal_dragged(species_idx):
+func on_animal_dragged(chorister_idx):
 	if audio.who_sings == Audio.WhoSings.None:
 		audio.who_sings = Audio.WhoSings.Solo
-		audio.set_solo_chorister(species_idx)
+		audio.set_solo_chorister(chorister_idx)
 
 func on_animal_dropped():
 	if audio.who_sings == Audio.WhoSings.Solo:

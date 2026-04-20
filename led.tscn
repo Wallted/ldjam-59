@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ckyt7nool2jwj"]
+
+[ext_resource type="Script" uid="uid://co83mrb7hr5bx" path="res://led.gd" id="1_avo8n"]
+
+[node name="Led" type="TextureRect" unique_id=1528761497]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_avo8n")

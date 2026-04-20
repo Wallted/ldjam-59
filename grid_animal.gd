@@ -53,9 +53,8 @@ func handle_mouse_drag(delta: float):
 		var global_coords = get_global_mouse_position()
 		_lerp_factor += clamp(const_lerp_catch_factor_velocity * delta, 0, 1)
 		global_position = lerp(global_position, global_coords, ease(_lerp_factor, -4.0))
-		zoo_space.grid_process_cell(global_position) # debug
 		animal_dragged.emit(chorister_idx)
-
+	
 	var is_in_bounds = zoo_space.grid_is_in_bounds(global_position)
 
 	if not _is_pressing:
@@ -69,6 +68,11 @@ func handle_mouse_drag(delta: float):
 		update_label('%s' % local_position_normalized)
 	else:
 		update_label('OOO')
+		
+	if not _is_pressing or not is_in_bounds:
+		zoo_space.grid_process_cell(Vector2.INF)
+	else:
+		zoo_space.grid_process_cell(global_position)
 
 func change_animation(_name: String):
 	animated_sprite.play(_name)

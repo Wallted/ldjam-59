@@ -11,8 +11,13 @@ var level: Level
 var on_animal_dropped: Callable
 var on_animal_dragged: Callable
 
+var focused_cells: Array[Vector2] = []
+
 func _ready() -> void:
 	pass
+
+func _process(_delta: float) -> void:
+	activate_dot_tiles()
 
 func restart():
 	clear()
@@ -63,6 +68,18 @@ func grid_generate(dimension_x, dimension_y):
 	texture_rect.position = tilemap.position - (texture_rect.size/2.0 - grid_size_scaled/2.0)
 	texture_rect.set_instance_shader_parameter('aspect_ratio', float(level.x)/float(level.y))
 
+func activate_dot_tiles():
+	var cell: Vector2
+	# deactivate
+	for i in focused_cells.size():
+		cell = focused_cells.pop_front()
+		if cell != Vector2.INF:
+			tilemap.set_cell(cell, 0, Vector2.ZERO)
+	# activate
+	if cell != Vector2.INF:
+		tilemap.set_cell(cell, 1, Vector2.ZERO)
+		focused_cells.append(cell)
+
 func grid_get_local_position(global_coords: Vector2):
 	""" Posision relative to TileMap """
 	var local_postion = global_position - global_coords + tilemap.position # why this works with global ?
@@ -82,7 +99,6 @@ func grid_get_cell_coords(global_coords: Vector2) -> Vector2i:
 	var local_postion = grid_get_local_position(global_coords)
 	return tilemap.local_to_map(local_postion/tilemap.scale)
 
-# trash
 func grid_process_cell(_global_coords: Vector2):
-	# tilemap.erase_cell(grid_get_cell_coords(global_coords))
-	pass
+	var cell_coords = grid_get_cell_coords(_global_coords)
+	focused_cells.append(cell_coords)

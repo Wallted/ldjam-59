@@ -1,7 +1,7 @@
 class_name Menu
 extends Control
-
-@onready var level_container: FlowContainer = $LevelContainer
+@onready var control:Control = $Control
+@onready var level_container: FlowContainer = $Control/LevelContainer
 @onready var tutorial: Control = $Tutorial
 const LEVEL_BUTTON = preload("uid://gbudv1i2une2")
 
@@ -23,7 +23,7 @@ func _ready() -> void:
 		button.show()
 		level_container.add_child(button)
 	if tutorial.visible:
-		level_container.hide()
+		control.hide()
 
 func update_i_na_chate(level_idx: int):
 	var level_button = level_container.get_child(level_idx - 1) as LevelButton
@@ -36,7 +36,10 @@ func change_level(button: LevelButton) -> void:
 	print(button)
 	on_level_change.emit(button.level_idx)
 
-
 func _on_texture_button_pressed() -> void:
 	tutorial.hide()
-	level_container.show()
+	control.show()
+
+func _on_back_button_pressed() -> void:
+	tutorial.show()
+	control.hide()

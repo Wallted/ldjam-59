@@ -7,13 +7,13 @@ const SPEAKER_MUTED = preload("uid://c3oltv0swl6gp")
 @onready var volume_slider: HSlider = $VolumeSlider
 
 var is_muted: bool = false;
-var volume: int = 100;
+var volume: int = 50;
 
 
 func _ready() -> void:
 	self.mute_button.pressed.connect(toggle_mute)
-	self.volume_slider.value = volume
 	self.volume_slider.value_changed.connect(set_volume.bind())
+	set_volume(volume)
 
 
 func toggle_mute():
@@ -27,6 +27,7 @@ func toggle_mute():
 
 func set_volume(value: int) -> void:
 	self.volume = value
+	self.volume_slider.value = volume
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value/100.0))
 	
 	

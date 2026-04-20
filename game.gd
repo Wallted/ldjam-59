@@ -6,7 +6,6 @@ extends Control
 @onready var back_button: BackButton = $BackButton
 @onready var current_fractal: Fractal = $CurrentFractal
 @onready var target_fractal: Fractal = $TargetFractal
-@onready var background = $Background
 const UFO = preload("uid://cmtktioq7jdad")
 @onready var ufo_group: Node2D = $UfoGroup
 @onready var led: Led = $Led
@@ -15,14 +14,12 @@ var level: Level
 signal go_to_menu()
 signal win()
 
-var rng = RandomNumberGenerator.new()
-
 func _ready():
 	zoo_space.on_animal_dropped = on_animal_dropped
 	zoo_space.on_animal_dragged = on_animal_dragged
 	back_button.pressed.connect(_exit_level)
 	led.reset()
-
+	
 
 func load_new_level(level_data: LevelData) -> void:
 	level = Level.new(level_data)
@@ -36,9 +33,6 @@ func load_new_level(level_data: LevelData) -> void:
 		led.enable()
 	led.disable()
 
-	for x in 8:
-		for y in 5:
-			background.set_cell(Vector2(x, y), rng.randi_range(0, 2), Vector2i(0, 0))
 
 func _exit_level():
 	current_fractal.stop()
@@ -51,9 +45,15 @@ func _exit_level():
 
 func _on_play_button(is_pressed: bool, is_player: bool):
 	audio.who_sings = Audio.WhoSings.None
-	if is_pressed:
-		audio.who_sings = Audio.WhoSings.Player if is_player else Audio.WhoSings.Target
-
+	if not is_pressed:
+		return
+	if is_player:
+		audio.who_sings = Audio.WhoSings.Player
+		target_fractal.unpress_button()
+	else:
+		audio.who_sings = Audio.WhoSings.Target
+		current_fractal.unpress_button()
+		
 func on_animal_dragged(chorister_idx):
 	if audio.who_sings == Audio.WhoSings.None:
 		audio.who_sings = Audio.WhoSings.Solo

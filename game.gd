@@ -56,6 +56,7 @@ func _on_play_button(is_pressed: bool, is_player: bool):
 		current_fractal.unpress_button()
 		
 func on_animal_dragged(chorister_idx):
+	led.disable()
 	if audio.who_sings == Audio.WhoSings.None:
 		audio.who_sings = Audio.WhoSings.Solo
 		audio.set_solo_chorister(chorister_idx)

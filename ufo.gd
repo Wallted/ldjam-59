@@ -21,6 +21,6 @@ func _process(delta):
 		self.hide()
 
 
-func fly_at(destination: Vector2):
-	self.destination = destination
+func fly_at(_destination: Vector2):
+	self.destination = _destination
 	self.show()

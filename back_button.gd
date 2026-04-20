@@ -1,2 +1,2 @@
 class_name BackButton
-extends TextureButton
+extends Button

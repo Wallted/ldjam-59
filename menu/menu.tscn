@@ -45,6 +45,7 @@ custom_minimum_size = Vector2(222, 222)
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 647.0
+alignment = 1
 last_wrap_alignment = 2
 
 [connection signal="pressed" from="Tutorial/TextureButton" to="." method="_on_texture_button_pressed"]

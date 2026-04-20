@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://gbudv1i2une2"]
 
+[ext_resource type="FontFile" uid="uid://dkmuesadxthj6" path="res://assets/digits.png" id="1_frgow"]
+[ext_resource type="StyleBox" uid="uid://cajbj8jru1phd" path="res://assets/level_button_highlight.tres" id="1_oc4oc"]
 [ext_resource type="StyleBox" uid="uid://d1gngm1geoatt" path="res://assets/level_button.tres" id="1_pbqjf"]
 [ext_resource type="Script" uid="uid://cu3bv20eod1gs" path="res://menu/level_button/level_button.gd" id="2_or0e7"]
 [ext_resource type="Texture2D" uid="uid://bwj5y360ujs13" path="res://assets/ufo1.png" id="3_oc4oc"]
 
-[node name="LevelButton" type="Button" unique_id=582310369]
+[node name="LevelButton" type="Button" unique_id=684907797]
 offset_right = 62.0
 offset_bottom = 39.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("1_frgow")
+theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = ExtResource("1_pbqjf")
+theme_override_styles/pressed = ExtResource("1_oc4oc")
+theme_override_styles/hover = ExtResource("1_oc4oc")
 script = ExtResource("2_or0e7")
 
 [node name="CompletionMark" type="TextureRect" parent="." unique_id=1432984207]

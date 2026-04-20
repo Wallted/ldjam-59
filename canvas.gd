@@ -24,16 +24,20 @@ const FRAME_BUTTON_PRESSED = preload("uid://dcn40m7ndrwwc")
 
 var parameters: Array[Parameter] = [
 	
+	Parameter.new("shader_parameter/color_phase", Vector2(0.5, 1.5), 1.0),
+	Parameter.new("shader_parameter/color_freq", Vector2(2.5, 0.5), 1.0),
+	
 	Parameter.new("shader_parameter/c_x", Vector2(0.3, 0.5), 0.33),
 	Parameter.new("shader_parameter/c_y", Vector2(0.4, 0.6), 0.48),
-	
-	Parameter.new("shader_parameter/color_phase", Vector2(0.0, 1.0), 0.0),
-	Parameter.new("shader_parameter/color_freq", Vector2(2.5, 0.5), 1.0),
 	
 	Parameter.new("shader_parameter/center_x", Vector2(-0.2, 0.2), 0.0),
 	Parameter.new("shader_parameter/center_y", Vector2(-0.2, 0.2), 0.0),
 	
-	Parameter.new("shader_parameter/zoom", Vector2(-0.2, 0.2), 0.05),
+	Parameter.new("shader_parameter/hue_weight", Vector2(0.25, 0.75), 0.5),
+	Parameter.new("shader_parameter/zoom", Vector2(0.4, -0.1), 0.0),
+	
+	Parameter.new("shader_parameter/rotation_angle", Vector2(0.0, PI), 0.5 * PI),
+	Parameter.new("shader_parameter/fish_eye", Vector2(1.0, 0.0), 0.0),
 ]
 
 var _level: Level

@@ -57,13 +57,16 @@ sources/5 = SubResource("TileSetAtlasSource_hb5m1")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
 shader = ExtResource("4_ryrav")
-shader_parameter/zoom = 0.0
+shader_parameter/zoom = 0.04
 shader_parameter/center_x = 0.0
 shader_parameter/center_y = 0.0
 shader_parameter/c_x = 0.33
 shader_parameter/c_y = 0.48
 shader_parameter/color_phase = 0.0
 shader_parameter/color_freq = 1.0
+shader_parameter/hue_weight = 0.5
+shader_parameter/fish_eye = 0.5
+shader_parameter/rotation_angle = 1.5699999999999998
 shader_parameter/thresh = 200.0
 shader_parameter/hue_coef = 0.4
 
@@ -76,6 +79,9 @@ shader_parameter/c_x = 0.0
 shader_parameter/c_y = 0.0
 shader_parameter/color_phase = 0.0
 shader_parameter/color_freq = 1.0
+shader_parameter/hue_weight = 0.0
+shader_parameter/fish_eye = 0.0
+shader_parameter/rotation_angle = 0.0
 shader_parameter/thresh = 200.0
 shader_parameter/hue_coef = 0.4
 

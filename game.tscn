@@ -93,15 +93,15 @@ offset_bottom = 310.0
 stream = SubResource("AudioStreamOggVorbis_iotsf")
 
 [node name="VolumeControl" parent="." unique_id=711890124 instance=ExtResource("6_ryrav")]
-position = Vector2(936.63, 64)
+position = Vector2(919, 61)
 scale = Vector2(1.1, 1.1)
 
 [node name="BackButton" type="Button" parent="." unique_id=347298129]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 64.0
-offset_right = 200.0
-offset_bottom = 128.0
+layout_mode = 1
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 281.0
+offset_bottom = 153.0
 focus_mode = 0
 theme_override_styles/normal = ExtResource("7_iotsf")
 theme_override_styles/hover = ExtResource("8_lc2xo")
@@ -109,15 +109,9 @@ script = ExtResource("8_j5wjh")
 
 [node name="TextureRect" type="TextureRect" parent="BackButton" unique_id=591504449]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = -33.0
-offset_right = 66.0
-offset_bottom = 33.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_iotsf")

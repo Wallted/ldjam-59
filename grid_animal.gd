@@ -15,7 +15,7 @@ var chorister_idx: int
 
 signal position_changed(new_position: Vector2)
 signal animal_dropped()
-signal animal_dragged(species_id)
+signal animal_dragged(chorister_idx)
 
 func _ready() -> void:
 	var res_list = Species.ChoristerResMapPreload[species_id]

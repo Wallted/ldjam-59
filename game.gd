@@ -19,7 +19,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	zoo_space.on_animal_dropped = on_animal_dropped
-	zoo_space.on_animal_drag = on_animal_dragged
+	zoo_space.on_animal_dragged = on_animal_dragged
 	back_button.pressed.connect(_exit_level)
 	led.reset()
 

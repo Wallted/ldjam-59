@@ -37,7 +37,8 @@ jobs:
           mv /opt/godot/* $HOME/.local/share/godot/
 
           rm -rf ../build && mkdir ../build
-          godot --headless --export-release 'Web' project.godot
+          godot --headless --export-release 'Web' project.godot 2>&1 | tee log.txt
+          grep "ERROR" log.txt && exit 1
           ls -l ../build
           cd ../build
           zip $GITHUB_WORKSPACE/build.zip *

@@ -59,7 +59,7 @@ func grid_generate(dimension_x, dimension_y):
 
 	tilemap.scale = Vector2(wanted_scale, wanted_scale)
 	tilemap.position = Vector2(offset_x, offset_y)
-	
+
 	for _x in level.x:
 		for _y in level.y:
 			tilemap.set_cell(Vector2(_x, _y), 0, Vector2.ZERO)

@@ -7,7 +7,7 @@ const LEVEL_BUTTON = preload("uid://gbudv1i2une2")
 
 signal on_level_change(level_number: int)  # 0=menu
 
-const LEVELS_COUNT = 6
+const LEVELS_COUNT = 12
 
 func _ready() -> void:
 	var side_length = ceil(sqrt(LEVELS_COUNT));
@@ -25,6 +25,14 @@ func _ready() -> void:
 	if tutorial.visible:
 		control.hide()
 
+func set_animal_faces(level_data_array: Array[LevelData]):
+	for i in level_data_array.size():
+		var level_data = level_data_array[i] as LevelData
+		if level_data.template_animal_idx > -1:
+			var level_button = level_container.get_child(i) as LevelButton
+			level_button.mark_animal(level_data.template_animal_idx)
+	
+
 func update_i_na_chate(level_idx: int):
 	var level_button = level_container.get_child(level_idx - 1) as LevelButton
 	level_button.mark_complete()
@@ -33,7 +41,6 @@ func is_level_completed(level_idx: int):
 	return level_container.get_child(level_idx - 1).is_completed
 
 func change_level(button: LevelButton) -> void:
-	print(button)
 	on_level_change.emit(button.level_idx)
 
 func _on_texture_button_pressed() -> void:

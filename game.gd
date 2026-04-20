@@ -2,6 +2,7 @@ class_name Game
 extends Control
 
 @onready var audio: Audio = $Audio
+@onready var win_stream: AudioStreamPlayer = $Audio/Win_audio_stream
 @onready var zoo_space: ZooSpace = $ZooSpace
 @onready var back_button: BackButton = $BackButton
 @onready var current_fractal: Fractal = $CurrentFractal
@@ -33,7 +34,7 @@ func load_new_level(level_data: LevelData) -> void:
 	if level_data.solved:
 		led.enable()
 	led.disable()
-
+	win_stream.stop()
 
 func _exit_level():
 	current_fractal.stop()
@@ -56,6 +57,7 @@ func _on_play_button(is_pressed: bool, is_player: bool):
 		current_fractal.unpress_button()
 		
 func on_animal_dragged(chorister_idx):
+	led.disable()
 	if audio.who_sings == Audio.WhoSings.None:
 		audio.who_sings = Audio.WhoSings.Solo
 		audio.set_solo_chorister(chorister_idx)
@@ -68,6 +70,7 @@ func on_animal_dropped():
 func ufo_deploy():
 	var ufo = UFO_SCN.instantiate()
 	var screen = get_viewport_rect()
+	win_stream.play(0.0)
 	ufo.position = screen.size + Vector2(50.0, -screen.size.y/2)
 	ufo.fly_at(Vector2(-50.0, -50.0))
 	ufo_group.add_child(ufo)
@@ -85,13 +88,11 @@ func check_win_condition():
 		):
 			is_solved = false;
 	if is_solved:
-		print('glorp')
 		led.enable()
 		if not level.solved:
 			ufo_deploy()
 			level.solved = true
 		win.emit(level.idx)
 	else:
-		print("glorpn't")
 		led.disable()
 	return is_solved;

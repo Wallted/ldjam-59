@@ -64,7 +64,7 @@ func on_animal_dropped():
 		audio.who_sings = Audio.WhoSings.None
 	check_win_condition()
 	
-func ufo_cleanup():
+func ufo_deploy():
 	var ufo = UFO_SCN.instantiate()
 	var screen = get_viewport_rect()
 	ufo.position = screen.size + Vector2(50.0, -screen.size.y/2)
@@ -86,7 +86,9 @@ func check_win_condition():
 	if is_solved:
 		print('glorp')
 		led.enable()
-		ufo_cleanup()
+		if not level.solved:
+			ufo_deploy()
+			level.solved = true
 		win.emit(level.idx)
 	else:
 		print("glorpn't")

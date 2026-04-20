@@ -130,3 +130,6 @@ offset_bottom = 139.0
 texture_normal = ExtResource("7_eow3j")
 stretch_mode = 0
 script = ExtResource("8_j5wjh")
+
+[connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]
+[connection signal="interaction" from="TargetFractal" to="." method="_on_play_button" binds= [false]]

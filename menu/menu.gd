@@ -33,7 +33,6 @@ func is_level_completed(level_idx: int):
 	return level_container.get_child(level_idx - 1).is_completed
 
 func change_level(button: LevelButton) -> void:
-	print(button)
 	on_level_change.emit(button.level_idx)
 
 func _on_texture_button_pressed() -> void:

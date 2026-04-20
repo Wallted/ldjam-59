@@ -2,18 +2,42 @@
 
 [ext_resource type="Script" uid="uid://rnloc0u2j2sq" path="res://grid_animal.gd" id="1_r8eqj"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_erjvo"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"sing",
+"speed": 5.0
+}]
+
 [node name="GridAnimal" type="Node2D" unique_id=1073071156]
 z_index = 10
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_r8eqj")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=242882356]
-offset_left = -64.0
-offset_top = -68.0
-offset_right = 64.0
-offset_bottom = 60.0
+offset_left = -400.0
+offset_top = -400.0
+offset_right = 400.0
+offset_bottom = 400.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 focus_mode = 0
 keep_pressed_outside = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureButton" unique_id=568929209]
+texture_filter = 4
+position = Vector2(400, 400)
+sprite_frames = SubResource("SpriteFrames_erjvo")
+animation = &"sing"
+frame_progress = 0.39215335
 
 [node name="Label" type="Label" parent="." unique_id=1701436103]
 offset_left = 32.0

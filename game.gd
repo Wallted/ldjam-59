@@ -52,7 +52,8 @@ func _on_play_button(is_pressed: bool, is_player: bool):
 	audio.who_sings = Audio.WhoSings.None
 	if is_pressed:
 		audio.who_sings = Audio.WhoSings.Player if is_player else Audio.WhoSings.Target
-		
+
+
 func ufo_cleanup():
 	var ufo = UFO.instantiate()
 	var screen = get_viewport_rect()

@@ -120,6 +120,7 @@ voice/1/rate_hz = 4.1
 resource_name = "HardLimiter"
 pre_gain_db = -14.87
 ceiling_db = -10.76
+release = 1.06
 
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_n8wo2"]
 resource_name = "EQ"
@@ -143,7 +144,7 @@ depth = 0.8
 resource_name = "Compressor"
 threshold = -5.0
 ratio = 48.0
-gain = -2.0
+gain = 3.0
 
 [sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
 resource_name = "Delay"

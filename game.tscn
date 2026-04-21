@@ -59,9 +59,9 @@ tags = {
 [sub_resource type="Curve2D" id="Curve2D_iotsf"]
 bake_interval = 0.01
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1164, 234, 121, 140, -121, -140, 611, 50, -137, 69, 137, -69, 550, 340, -264, 96, 264, -96, 332, 151, -124, -49, 124, 49, 129, 195, 0, 0, 0, 0, -45, 37)
+"points": PackedVector2Array(0, 0, 0, 0, 1338.0322, 207.11163, 184.57135, -87.97613, -184.57135, 87.97613, 842.50494, 211.6887, 172.74846, -35.291866, -172.74846, 35.291866, 482.5157, 397.05933, -154.57541, 76.66776, 154.57541, -76.66776, 400.10852, 177.36081, 96.839355, -72.03859, -96.839355, 72.03859, 558.41705, 295.2199, -84.724045, 90.2687, 84.724045, -90.2687, 310.1112, 271.19037, -17.107738, -57.600025, 17.107738, 57.600025, 584.44037, 276.91168, 109.163666, 2.5791054, -109.163666, -2.5791054, 426.13184, 377.60687, 0, 0, 0, 0, -302.5211, 192.23622)
 }
-point_count = 6
+point_count = 9
 
 [node name="Game" type="Control" unique_id=1684369373]
 layout_mode = 3
@@ -140,20 +140,21 @@ texture = ExtResource("12_dupa2")
 z_index = 10
 
 [node name="UfoPath" type="Path2D" parent="UfoGroup" unique_id=2081920312]
-position = Vector2(-41.049633, 6.0682373)
-scale = Vector2(1.1100082, 0.87392473)
+position = Vector2(107, -1.9999981)
+scale = Vector2(0.92224985, 0.87392473)
 curve = SubResource("Curve2D_iotsf")
 
 [node name="UfoCruiseControl" type="PathFollow2D" parent="UfoGroup/UfoPath" unique_id=1377594642]
-position = Vector2(1164, 234)
-rotation = -3.0400908
+position = Vector2(1338.0322, 207.11163)
+rotation = -2.8795571
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("13_215e1")
 
 [node name="UFO" parent="UfoGroup/UfoPath/UfoCruiseControl" unique_id=1620054999 instance=ExtResource("13_lc2xo")]
 visible = true
-position = Vector2(26.529432, 33.484173)
-rotation = 3.1415927
+position = Vector2(-10.564224, 38.53357)
+rotation = 2.799508
+scale = Vector2(1.7376614, 1.7376614)
 metadata/_edit_group_ = true
 
 [connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]

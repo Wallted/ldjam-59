@@ -5,10 +5,9 @@ var flying = false
 @onready var ufo: UFO = $UFO
 
 @export var points = [
-	[0.0, 0.0],
-	[0.3, -0.2],
+	[0.0, -0.7],
 	[1.0, 0.0],
-	[4.0, 3.0],
+	[1.0, 3.0],
 	#[0.2, 0.0],
 	#[1.2, 6.0],
 	#[1.8, -5.0],
@@ -19,7 +18,7 @@ var flying = false
 
 @export var starting_speed := 0.2
 var elapsed_time := 0.0
-var current_speed := 0.3
+var current_speed := 1.0
 var position_ratio := 0.0
 
 func _ready() -> void:

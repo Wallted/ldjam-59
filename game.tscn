@@ -155,7 +155,7 @@ script = ExtResource("13_215e1")
 visible = true
 position = Vector2(-10.564224, 38.53357)
 rotation = 2.799508
-scale = Vector2(1.7376614, 1.7376614)
+scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
 [connection signal="interaction" from="CurrentFractal" to="." method="_on_play_button" binds= [true]]

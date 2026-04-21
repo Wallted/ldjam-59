@@ -23,6 +23,7 @@ func _ready():
 	
 
 func load_new_level(level_data: LevelData) -> void:
+	ufo_cruise_control.hide()
 	level = Level.new(level_data)
 	audio.level = level
 	zoo_space.level = level

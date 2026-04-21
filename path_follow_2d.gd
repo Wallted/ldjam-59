@@ -22,13 +22,11 @@ var current_speed := 1.0
 var position_ratio := 0.0
 
 func _ready() -> void:
+	restart()
+	hide()
 	flying = false
-	loop = false
-	rotates = false
 	
 func _process(delta):
-	if progress_ratio >= 1.0:
-		hide()
 	ufo.flip_v = cos(rotation) >= 0
 	if flying:
 		elapsed_time += delta
@@ -51,5 +49,9 @@ func acceleration_at(time_in_seconds):
 
 func restart():
 	show()
+	elapsed_time = 0.0
+	current_speed = 1.0
+	position_ratio = 0.0
 	flying = true
-	progress = 0.0
+	loop = false
+	rotates = false

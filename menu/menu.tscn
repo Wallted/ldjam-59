@@ -160,8 +160,9 @@ grow_vertical = 2
 [node name="LevelContainer" type="FlowContainer" parent="Control" unique_id=2126977126]
 custom_minimum_size = Vector2(222, 222)
 layout_mode = 0
+offset_top = 22.0
 offset_right = 1152.0
-offset_bottom = 647.0
+offset_bottom = 543.0
 alignment = 1
 last_wrap_alignment = 2
 

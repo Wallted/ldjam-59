@@ -32,7 +32,6 @@ autoplay = true
 stream = ExtResource("2_q45hi")
 autoplay = true
 bus = &"Choripracter"
-playback_type = 1
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioStreamPlayer" unique_id=348801532]
 stream = SubResource("AudioStreamGenerator_q45hi")

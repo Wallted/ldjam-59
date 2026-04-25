@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b82orp8byty55" path="res://assets/animals/meowl/idle_1.png" id="5_svuvw"]
 [ext_resource type="Texture2D" uid="uid://504j6pbsgy5p" path="res://assets/animals/lambi/idle_0.png" id="9_bc54p"]
 [ext_resource type="Texture2D" uid="uid://0ok0iucpmjmw" path="res://assets/animals/lambi/idle_1.png" id="10_043lm"]
+[ext_resource type="Texture2D" uid="uid://bdfuhihxqbn1k" path="res://assets/backboard_normal.tres" id="11_043lm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6nwqt"]
 animations = [{
@@ -105,8 +106,7 @@ theme_override_colors/default_color = Color(1, 0.8980392, 0.27450982, 1)
 theme_override_colors/font_outline_color = Color(0.19215687, 0.21568628, 0.047058824, 1)
 theme_override_constants/shadow_outline_size = 351
 theme_override_constants/outline_size = 10
-text = "Your goal is to synthesize a signal that matches the input signal
-for each level.
+text = "Your goal is to synthesize a signal that matches the input signal for each level.
 Wiggle these weird, cryptid-sounding animals - each one stimulates the signal in its own uncanny way.
 Observe synesthetic cues for both the input and the result.
 The animals influence the signal based on their position on the field.
@@ -198,6 +198,49 @@ grow_vertical = 2
 texture = ExtResource("4_6fswf")
 expand_mode = 1
 flip_h = true
+
+[node name="MotivationTile" type="TextureRect" parent="Control" unique_id=1598048865]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -284.0
+offset_top = -152.0
+offset_right = -16.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("11_043lm")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MotivationTile" unique_id=232814987]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.10867
+offset_top = -143.59052
+offset_right = 126.89139
+offset_bottom = 155.40948
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.95, 0.95)
+theme_override_colors/default_color = Color(1, 0.8980392, 0.27450982, 1)
+theme_override_colors/font_outline_color = Color(0.19215687, 0.21568628, 0.047058824, 1)
+theme_override_constants/shadow_outline_size = 351
+theme_override_constants/outline_size = 10
+text = "You can try out whatever levels you feel like and skip the others.
+
+Have fun!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Tutorial/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Control/Button" to="." method="_on_back_button_pressed"]
